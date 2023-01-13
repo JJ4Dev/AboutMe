@@ -2,9 +2,275 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="description" content="All about Jan Reist">
+    <meta name="author" content="Jan Reist">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/jrLogo2.png">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/bootstrap-icons.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>About Me</title>
 </head>
-<body>
 
+<body>
+<nav class="navbar navbar-expand fixed-top">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#sec-1"><img src="image/jrLogo2.png" alt="Jan Reist Logo" id="imgLogo"></a>
+            </li>
+            <li class="nav-item">
+                <a href="#sec-1" class="nav-link text-light py-2 px-4 fs-5">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#sec-2" class="nav-link text-light py-2 px-4 fs-5">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#sec-3" class="nav-link text-light py-2 px-4 fs-5">Skills</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container text-light">
+    <section id="sec-1" class="d-flex justify-content-center">
+        <div class="row">
+            <div class="align-self-center w-50" id="divLeft">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h1>
+                            <span href="" class="typewrite" data-period="2000"
+                                  data-type='[ "Hi, I am Jan Reist.", "I Love to Design.", "I am Creative.", "I Love to Develop." ]'>
+                                <span class="wrap"></span>
+                            </span>
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <h4>I'm Jan, motivated and experienced web and frontend developer with a strong desire to
+                            continue learning.</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="w-50 align-self-center" id="divRight">
+                <img src="image/profilePic.png" alt="Jan Reist" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="sec-2">
+        <div class="row">
+            <h1 class="text-center mb-5">About Me</h1>
+            <div class="w-25" id="divImage">
+                <img src="image/profilePicLarge.png" alt="Jan Reist" class="img-fluid">
+            </div>
+            <div class="w-75" id="divAbout">
+                <h4>Hi There</h4>
+                <p>Hi, my name is Jan Reist. I completed an apprenticeship at Bell Switzerland AG as an
+                    application developer from 2019 to 2023. During my apprenticeship, I gained a lot of experience in
+                    the web and frontend fields.</p>
+                <p>I have continued to learn and grow in these areas, working on a variety of interesting projects. I am
+                    motivated and always looking to expand my skills and knowledge in order to advance as an informatics
+                    professional.</p>
+                <p>I hope to have the opportunity to apply my abilities in a challenging and dynamic work environment in
+                    the future.</p>
+
+                <div class="row mt-5">
+                    <div class="col">
+                        <h6><i class="bi bi-person"></i> Name: </h6>
+                        <p>Jan Reist</p>
+                    </div>
+                    <div class="col">
+                        <h6><i class="bi bi-linkedin"></i> LinkedIn:</h6>
+                        <a href="www.linkedin.com/in/jan-reist">Jan Reist</a>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col">
+                        <h6><i class="bi bi-binoculars"></i> Interests: </h6>
+                        <ul>
+                            <li><i class="bi bi-code-square"></i>&nbsp; Design</li>
+                            <li><i class="bi bi-browser-edge"></i>&nbsp; Web Dev</li>
+                            <li><i class="bi bi-tools"></i>&nbsp; Technology</li>
+                            <li><i class="bi bi-google-play"></i>&nbsp; App Dev</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h6><i class="bi bi-star"></i> Hobbys: </h6>
+                        <ul>
+                            <li><i class="bi bi-heart-pulse"></i>&nbsp; Fitness</li>
+                            <li><i class="bi bi-car-front-fill"></i>&nbsp; Car enthusiast</li>
+                            <li><i class="bi bi-music-note-beamed"></i>&nbsp; Music listening</li>
+                            <li><i class="bi bi-controller"></i>&nbsp; Videogames</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sec-3">
+        <div class="row">
+            <h1 class="text-center mb-3">Skills</h1>
+            <div class="row row-cols-3">
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/htmlLogo.png" alt="HTML Logo">
+                            <h6>HTML</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>Hypertext Markup Language</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/cssLogo.png" alt="CSS Logo">
+                            <h6>CSS</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>Cascading <br> Style <br> Sheets</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/jsLogo.png" alt="JS Logo">
+                            <h6>JS</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>Javascript Scriptlanguage for Website</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/bootstrapLogo.png" alt="Bootstrap Logo">
+                            <h6>BS</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>Bootstrap <br> CSS-Framework <br> for Website</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/jqueryLogo.png" alt="JQuery Logo">
+                            <h6>JQuery</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>JQuery <br> JS-Libary <br> for Website</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/sqlLogo.png" alt="SQL Logo">
+                            <h6>SQL</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>Structured <br> Query <br> Language</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/c-sharpLogo.png" alt="C# Logo">
+                            <h6>C#</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>C-Sharp <br> Object-oriented programming</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/aspLogo.png" alt="ASP.NET Logo">
+                            <h6>ASP.NET</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>Active Server Pages .NET <br> utilize C#</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/phpLogo.png" alt="PHP Logo">
+                            <h6>PHP</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>Hypertext Preprocessor <br> for Website</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/javaLogo.png" alt="Java Logo">
+                            <h6>Java</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>Java <br> Object-oriented programming</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/sapLogo.png" alt="SAP Logo">
+                            <h6>SAP</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>System Applications Products</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center mb-5">
+                    <div class="skillCard row">
+                        <div class="cardImage text-center ps-2 pe-0">
+                            <img class="img-fluid pb-1" src="image/logo/fioriLogo.png" alt="Fiori Logo">
+                            <h6>Fiori</h6>
+                        </div>
+                        <div class="cardText">
+                            <p>Role-based <br> user interface <br> for SAP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#sec-1" class="text-center"><h1><i class="bi bi-rocket"></i></h1></a>
+    </section>
+
+    <!--    <section id="sec-4">
+            <div class="row">
+
+
+            </div>
+        </section>-->
+</main>
+
+<script src="script/bootstrap.min.js"></script>
+<script src="script/script.js"></script>
 </body>
 </html>

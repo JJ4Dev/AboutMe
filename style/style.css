@@ -1,0 +1,157 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #272a40 !important;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+nav {
+    background: #191B2A;
+}
+
+a:hover {
+    color: #777dac !important;
+}
+
+#divAbout a {
+    color: white;
+}
+
+#divAbout h6 {
+    color: #FF4A57;
+}
+
+section {
+    padding-top: 62px;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+#sec-2 ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+}
+
+.skillCard {
+    height: 95px;
+    width: 205px;
+    padding-top: 10px;
+    background: #191B2A;
+    border-radius: 20px;
+}
+
+.skillCard h6 {
+    color: #FF4A57;
+}
+
+.skillCard:hover {
+    transform: scale(1.2);
+    --webkit-transform: scale(1.2);
+    transition: transform 330ms;
+}
+
+.skillCard:not(:hover) {
+    transform: scale(1);
+    --webkit-transform: scale(1);
+    transition: transform 330ms;
+}
+
+.cardImage {
+    width: 30%;
+}
+
+.cardText {
+    width: 70%;
+}
+
+.bi-rocket {
+    color: #FF4A57;
+}
+
+#imgLogo {
+    width: 46px;
+    height: 46px;
+}
+
+#imgLogo:hover {
+    transform: scale(1.1);
+    --webkit-transform: scale(1.1);
+    transition: transform 330ms;
+}
+
+#imgLogo:not(:hover) {
+    transform: scale(1);
+    --webkit-transform: scale(1);
+    transition: transform 330ms;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #FF4A57;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background-color: #FF4A57;
+}
+
+@media only screen and (max-width: 1200px) {
+    #divLeft {
+        width: 70% !important;
+    }
+
+    #divRight {
+        width: 30% !important;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .cardImage {
+        width: 100%;
+        padding: 0 !important;
+    }
+
+    .cardText {
+        display: none;
+    }
+
+    .skillCard {
+        height: 105px;
+        width: 105px;
+        padding-top: 10px;
+        background: #191B2A;
+        border-radius: 20px;
+    }
+
+    #divImage {
+        display: none !important;
+    }
+
+    #divAbout {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #divLeft {
+        width: 100% !important;
+    }
+
+    #divRight {
+        display: none !important;
+    }
+}
