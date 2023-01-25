@@ -150,6 +150,11 @@ section {
     height: 46px;
 }
 
+#imgLogo:hover {
+    -webkit-animation: jello-horizontal 0.85s;
+    animation: jello-horizontal 0.85s;
+}
+
 @-webkit-keyframes jello-horizontal {
     0% {
         -webkit-transform: scale3d(1, 1, 1);
@@ -210,7 +215,6 @@ section {
         transform: scale3d(1, 1, 1);
     }
 }
-
 
 
 ::-webkit-scrollbar {
