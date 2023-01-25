@@ -53,3 +53,13 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
 };
+
+
+const rocket = document.getElementById("rocketUp");
+rocket.addEventListener("click", function () {
+    rocket.classList.add("rocketAnimation");
+    setTimeout(function () {
+    document.getElementById("sec-1").scrollIntoView({behavior: 'smooth'});
+    rocket.classList.remove("rocketAnimation")
+    }, 600);
+});

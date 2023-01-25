@@ -47,16 +47,40 @@ section {
     color: #FF4A57;
 }
 
-.skillCard:hover {
-    transform: scale(1.2);
-    --webkit-transform: scale(1.2);
-    transition: transform 330ms;
+.skillCard:hover img {
+    -webkit-animation: flip-vertical 1s;
+    animation: flip-vertical 1s;
 }
 
-.skillCard:not(:hover) {
-    transform: scale(1);
-    --webkit-transform: scale(1);
-    transition: transform 330ms;
+@-webkit-keyframes flip-vertical {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    50% {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+    }
+
+    100% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+}
+@keyframes flip-vertical {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    50% {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+    }
+
+    100% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
 }
 
 .cardImage {
@@ -67,8 +91,58 @@ section {
     width: 70%;
 }
 
+.infoMe {
+    padding-left: 1em;
+}
+
 .bi-rocket {
     color: #FF4A57;
+}
+
+.rocketAnimation {
+    -webkit-animation: slide-out-blurred-top 0.5s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+    animation: slide-out-blurred-top 0.5s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+}
+
+@-webkit-keyframes slide-out-blurred-top {
+    0% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+        transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-1000px) scaleY(2) scaleX(0.2);
+        transform: translateY(-1000px) scaleY(2) scaleX(0.2);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+}
+@keyframes slide-out-blurred-top {
+    0% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+        transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-1000px) scaleY(2) scaleX(0.2);
+        transform: translateY(-1000px) scaleY(2) scaleX(0.2);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
 }
 
 #imgLogo {
@@ -76,17 +150,68 @@ section {
     height: 46px;
 }
 
-#imgLogo:hover {
-    transform: scale(1.1);
-    --webkit-transform: scale(1.1);
-    transition: transform 330ms;
+@-webkit-keyframes jello-horizontal {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+@keyframes jello-horizontal {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
 }
 
-#imgLogo:not(:hover) {
-    transform: scale(1);
-    --webkit-transform: scale(1);
-    transition: transform 330ms;
-}
+
 
 ::-webkit-scrollbar {
     width: 12px;
@@ -153,5 +278,11 @@ section {
 
     #divRight {
         display: none !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .interestList {
+
     }
 }
