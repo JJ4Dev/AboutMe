@@ -99,6 +99,10 @@ section {
     color: #FF4A57;
 }
 
+#rocketUp:hover {
+    cursor: pointer;
+}
+
 .rocketAnimation {
     -webkit-animation: slide-out-blurred-top 0.5s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
     animation: slide-out-blurred-top 0.5s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
