@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="description" content="All about Jan Reist">
     <meta name="author" content="Jan Reist">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Me</title>
     <link rel="icon" href="image/jrLogo2.png">
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="style/bootstrap-icons.css">
     <link rel="stylesheet" href="style/style.css">
-    <title>About Me</title>
 </head>
 
 <body>
@@ -17,23 +17,34 @@
     <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="#sec-1"><img src="image/jrLogo2.png" alt="Jan Reist Logo" id="imgLogo"></a>
+                <a href="#home"><img src="image/jrLogo2.png" alt="Jan Reist Logo" id="imgLogo"></a>
             </li>
             <li class="nav-item">
-                <a href="#sec-1" class="nav-link text-light py-2 px-4 fs-5">Home</a>
+                <a href="#home" class="nav-link text-light py-2 px-4 fs-5">Home</a>
             </li>
             <li class="nav-item">
-                <a href="#sec-2" class="nav-link text-light py-2 px-4 fs-5">About</a>
+                <a href="#about" class="nav-link text-light py-2 px-4 fs-5">About</a>
             </li>
             <li class="nav-item">
-                <a href="#sec-3" class="nav-link text-light py-2 px-4 fs-5">Skills</a>
+                <a href="#skills" class="nav-link text-light py-2 px-4 fs-5">Skills</a>
             </li>
         </ul>
+
+        <div class="float-end">
+            <div class="mt-4">
+                <div class="btnLanguage">
+                    <input type="checkbox" class="cbLanguage" id="languageSwitch"/>
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                    <label for="languageSwitch">Language Switch</label>
+                </div>
+            </div>
+        </div>
     </div>
 </nav>
 
 <main class="container text-light">
-    <section id="sec-1" class="d-flex justify-content-center">
+    <section id="home" class="d-flex justify-content-center">
         <div class="row">
             <div class="align-self-center w-50" id="divLeft">
                 <div class="container-fluid">
@@ -46,7 +57,8 @@
                         </h1>
                     </div>
                     <div class="row">
-                        <h4>I'm Jan, motivated and experienced web and frontend developer with a strong desire to
+                        <h4 lng-tag="homeTxt">I'm Jan, motivated and experienced web and frontend developer with a
+                            strong desire to
                             continue learning.</h4>
                     </div>
                 </div>
@@ -58,21 +70,24 @@
     </section>
 
 
-    <section id="sec-2">
+    <section id="about">
         <div class="row">
-            <h1 class="text-center mb-5">About Me</h1>
+            <h1 class="text-center mb-5" lng-tag="aboutMe">About Me</h1>
             <div class="w-25" id="divImage">
                 <img src="image/profilePicLarge.png" alt="Jan Reist" class="img-fluid">
             </div>
             <div class="w-75" id="divAbout">
-                <h4>Hi There</h4>
-                <p>Hi, my name is Jan Reist. I completed an apprenticeship at Bell Switzerland AG as an
+                <h4 lng-tag="hi">Hi There</h4>
+                <p lng-tag="aboutTxt1">Hi, my name is Jan Reist. I completed an apprenticeship at Bell Switzerland AG as
+                    an
                     application developer from 2019 to 2023. During my apprenticeship, I gained a lot of experience in
                     the web and frontend fields.</p>
-                <p>I have continued to learn and grow in these areas, working on a variety of interesting projects. I am
+                <p lng-tag="aboutTxt2">I have continued to learn and grow in these areas, working on a variety of
+                    interesting projects. I am
                     motivated and always looking to expand my skills and knowledge in order to advance as an informatics
                     professional.</p>
-                <p>I hope to have the opportunity to apply my abilities in a challenging and dynamic work environment in
+                <p lng-tag="aboutTxt3">I hope to have the opportunity to apply my abilities in a challenging and dynamic
+                    work environment in
                     the future.</p>
 
                 <div class="row mt-5">
@@ -88,21 +103,24 @@
 
                 <div class="row mt-4 interestList">
                     <div class="col">
-                        <h6><i class="bi bi-binoculars"></i> Interests: </h6>
+                        <h6><i class="bi bi-binoculars"></i> <span lng-tag="interests">Interests:</span></h6>
                         <ul>
-                            <li><i class="bi bi-code-square"></i>&nbsp; Design</li>
-                            <li><i class="bi bi-browser-edge"></i>&nbsp; Web Dev</li>
-                            <li><i class="bi bi-tools"></i>&nbsp; Technology</li>
-                            <li><i class="bi bi-google-play"></i>&nbsp; App Dev</li>
+                            <li><i class="bi bi-code-square"></i>&nbsp; <span lng-tag="design">Design</span></li>
+                            <li><i class="bi bi-browser-edge"></i>&nbsp; <span lng-tag="webDev">Web Dev</span></li>
+                            <li><i class="bi bi-tools"></i>&nbsp; <span lng-tag="tec">Technology</span></li>
+                            <li><i class="bi bi-file-earmark-lock2"></i>&nbsp; <span lng-tag="security">Security</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="col">
-                        <h6><i class="bi bi-star"></i> Hobbys: </h6>
+                        <h6><i class="bi bi-star"></i> <span lng-tag="hobbys">Hobbys:</span></h6>
                         <ul>
-                            <li><i class="bi bi-heart-pulse"></i>&nbsp; Fitness</li>
-                            <li><i class="bi bi-car-front-fill"></i>&nbsp; Car enthusiast</li>
-                            <li><i class="bi bi-music-note-beamed"></i>&nbsp; Music listening</li>
-                            <li><i class="bi bi-controller"></i>&nbsp; Videogames</li>
+                            <li><i class="bi bi-heart-pulse"></i>&nbsp; <span lng-tag="fitness">Fitness</span></li>
+                            <li><i class="bi bi-car-front-fill"></i>&nbsp; <span lng-tag="car">Car enthusiast</span>
+                            </li>
+                            <li><i class="bi bi-music-note-beamed"></i>&nbsp; <span
+                                    lng-tag="music">Music listening</span></li>
+                            <li><i class="bi bi-controller"></i>&nbsp; <span lng-tag="games">Videogames</span></li>
                         </ul>
                     </div>
                 </div>
@@ -110,9 +128,9 @@
         </div>
     </section>
 
-    <section id="sec-3">
+    <section id="skills">
         <div class="row justify-content-center">
-            <h1 class="text-center mb-3">Skills</h1>
+            <h1 class="text-center mb-3" lng-tag="skills">Skills</h1>
             <div class="row row-cols-3">
                 <div class="col d-flex justify-content-center mb-5">
                     <div class="skillCard row">
@@ -262,7 +280,7 @@
         <a class="text-center" id="rocketUp"><h1><i class="bi bi-rocket"></i></h1></a>
     </section>
 </main>
-<script src="script/bootstrap.min.js"></script>
+<script src="script/bootstrap.bundle.min.js"></script>
 <script src="script/script.js"></script>
 </body>
 </html>
