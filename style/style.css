@@ -1,101 +1,69 @@
 html, body {
-    width: 100%;
-    height: 100%;
     margin: 0;
     background: #272a40;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: #f5f5f5;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #FF4A57;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, h3 {
+    font-weight: 500;
+}
+
+p {
+    font-weight: 400;
+}
+
 nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background: #141731;
+    height: 4rem;
+    position: fixed;
+    width: 100%;
 }
 
-a:hover {
-    color: #777dac !important;
+nav > a {
+    text-decoration: none;
+    color: #f5f5f5;
+    padding: 0 12px;
+    font-size: 20px;
 }
 
-#divAbout a {
-    color: white;
+nav a:hover {
+    color: #727FB1;
 }
 
-#divAbout h6 {
-    color: #FF4A57;
+nav img {
+    width: 3.75rem;
+    height: 3.75rem;
 }
 
-section {
-    padding-top: 62px;
-    height: 100vh;
-    scroll-snap-align: start;
+nav a:first-child {
+    padding: 0 6px;
 }
 
-#info ul {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 1em;
-}
 
-.skillCard {
-    height: 95px;
-    width: 205px;
-    padding-top: 10px;
-    background: #191B2A;
-    border-radius: 20px;
-}
-
-.skillCard h6 {
-    color: #FF4A57;
-}
-
-.skillCard:hover img {
-    -webkit-animation: flip-vertical 1s;
-    animation: flip-vertical 1s;
-}
-
-@-webkit-keyframes flip-vertical {
-    0% {
-        transform: rotateY(0);
-    }
-    50% {
-        transform: rotateY(-180deg);
-    }
-
-    100% {
-        transform: rotateY(0);
-    }
-}
-
-@keyframes flip-vertical {
-    0% {
-        transform: rotateY(0);
-    }
-    50% {
-        transform: rotateY(-180deg);
-    }
-
-    100% {
-        transform: rotateY(0);
-    }
-}
-
-.cardImage {
-    width: 30%;
-}
-
-.cardText {
-    width: 70%;
-}
-
-.infoMe {
-    padding-left: 1em;
-}
-
-.typewrite > .wrap {
-    border-right: 0.08em solid #fff
-}
-
-.knobs,
-.layer {
+nav > div > div {
     position: absolute;
     top: 0;
     right: 0;
@@ -103,21 +71,17 @@ section {
     left: 0;
 }
 
-.btnLanguage {
+nav > div {
     position: relative;
-    top: 50%;
-    width: 74px;
-    height: 36px;
-    margin: -20px auto 0 auto;
+    top: 14.4%;
+    width: 59px;
+    height: 29px;
+    margin: -16px 10px 0 auto;
     overflow: hidden;
-}
-
-.btnLanguage,
-.btnLanguage .layer {
     border-radius: 100px;
 }
 
-.cbLanguage {
+nav input {
     position: relative;
     width: 100%;
     height: 100%;
@@ -128,87 +92,198 @@ section {
     z-index: 3;
 }
 
-.knobs {
+nav > div > div:first-of-type {
     z-index: 2;
 }
 
-.layer {
+nav > div > div:last-of-type {
     width: 100%;
     background-color: #FF4A57;
     transition: 0.3s ease all;
     z-index: 1;
 }
 
-.btnLanguage .knobs:before {
-    content: url(../image/germanFlagIconSmall.png);
+nav > div > div:first-of-type:before {
+    content: url(../images/germanyFlag.png);
     position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 30px;
-    height: 30px;
-    color: #fff;
-    font-size: 10px;
-    font-weight: bold;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     text-align: center;
-    line-height: 1;
-    padding-top: 5.5px;
     background-color: #272a40;
     border-radius: 50%;
     transition: 0.3s ease all, left 0.3s;
 }
 
-.btnLanguage .cbLanguage:active + .knobs:before {
+nav input:active + div:first-of-type:before {
     width: 46px;
     border-radius: 100px;
 }
 
-.btnLanguage .cbLanguage:checked:active + .knobs:before {
+nav input:checked:active + div:first-of-type:before {
     margin-left: -26px;
 }
 
-.btnLanguage .cbLanguage:checked + .knobs:before {
-    content: url(../image/englandFlagIconSmall.png);
-    left: 42px;
+nav input:checked + div:first-of-type:before {
+    content: url(../images/englandFlag.png);
+    left: 32px;
 }
 
-.bi-rocket {
+main > section {
+    width: 100%;
+    height: calc(100vh - 4rem);
+    scroll-snap-align: start;
+}
+
+main > section:nth-child(2n) {
+    background: #21243C;
+    padding-top: 4rem;
+}
+
+main > section:first-child {
+    padding-top: 4rem;
+}
+
+main > section > div:first-child {
+    width: 80%;
+    height: 100%;
+    margin: 0 10%;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 0;
+    font-size: calc(1.5em + 2vw)
+}
+
+h3 {
+    font-size: calc(1.17em + 0.5vw);
+    margin: 0;
+}
+
+h4 {
+    margin-bottom: 0;
     color: #FF4A57;
 }
 
-#rocketUp:hover {
-    cursor: pointer;
+main > section > div {
+    display: flex;
+    justify-content: center;
 }
 
-.rocketAnimation {
-    -webkit-animation: slide-out-blurred-top 0.8s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
-    animation: slide-out-blurred-top 0.8s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+main > section:first-child > div {
+    align-items: center;
+    flex-direction: row;
 }
 
-@-webkit-keyframes slide-out-blurred-top {
-    0% {
-        transform: translateY(0) scaleY(1) scaleX(1);
-        -webkit-transform-origin: 50% 0;
-        transform-origin: 50% 0;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-1000px) scaleY(2) scaleX(0.2);
-        -webkit-transform-origin: 50% 0;
-        transform-origin: 50% 0;
-        -webkit-filter: blur(40px);
-        filter: blur(40px);
-        opacity: 0;
-    }
+main > section:first-child > div > div {
+    text-align: center;
 }
 
-#imgLogo {
-    width: 46px;
-    height: 46px;
+main img {
+    width: 50%;
+    height: auto;
 }
 
-#imgLogo:hover {
+main > section:first-child > div > img {
+    margin-left: 10%;
+}
+
+main > section:first-child span {
+    border-right: 0.08em solid #fff
+}
+
+main > section:nth-child(2) img {
+    width: 30%;
+    height: auto;
+    padding-right: 2%;
+    object-fit: scale-down;
+}
+
+main > section:nth-child(2) div {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
+main > section:nth-child(2) > div > div {
+    flex-direction: row;
+}
+
+main > section:nth-child(2) > div > div > div > div {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+main a {
+    color: #FF4A57;
+}
+
+main > section:last-child > div {
+    flex-direction: column;
+}
+
+main > section:last-child > div > div {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px 15px;
+    grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . .";
+}
+
+main > section:last-child > div > div > div {
+    background: #141731;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+main > section:last-child > div > div > div > p {
+    align-self: center;
+    text-align: center;
+    color: #f5f5f5;
+    margin: 0 10px 0 0;
+}
+
+main > section:last-child > div > div > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 10px 5px 10px;
+}
+
+main > section:last-child img + p {
+    margin: 5px 0 0 0;
+    color: #FF4A57;
+}
+
+main > section:last-child img {
+    width: 60px;
+    height: 60px;
+    object-fit: scale-down;
+}
+
+main > section:last-child a {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 32px;
+}
+
+nav img:hover {
     -webkit-animation: jello-horizontal 0.85s;
     animation: jello-horizontal 0.85s;
 }
@@ -261,79 +336,114 @@ section {
     }
 }
 
-::-webkit-scrollbar {
-    width: 12px;
+main > section:last-child > div > div > div:hover img {
+    -webkit-animation: flip-vertical 1s;
+    animation: flip-vertical 1s;
 }
 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background-color: #FF4A57;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-thumb:window-inactive {
-    background-color: #FF4A57;
-}
-
-@media only screen and (max-width: 1200px) {
-    #divLeft {
-        width: 70% !important;
+@-webkit-keyframes flip-vertical {
+    0% {
+        transform: rotateY(0);
+    }
+    50% {
+        transform: rotateY(-180deg);
     }
 
-    #divRight {
-        width: 30% !important;
+    100% {
+        transform: rotateY(0);
     }
 }
 
-@media only screen and (max-width: 770px) {
-    .cardImage {
+@keyframes flip-vertical {
+    0% {
+        transform: rotateY(0);
+    }
+    50% {
+        transform: rotateY(-180deg);
+    }
+
+    100% {
+        transform: rotateY(0);
+    }
+}
+
+.bi-rocket:hover {
+    cursor: pointer;
+}
+
+.rocketAnimation {
+    -webkit-animation: slide-out-blurred-top 0.8s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+    animation: slide-out-blurred-top 0.8s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+}
+
+@-webkit-keyframes slide-out-blurred-top {
+    0% {
+        transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px) scaleY(2) scaleX(0.2);
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    main > section:last-child img {
         width: 100%;
-        padding: 0 !important;
+        height: 100%;
     }
 
-    .cardText {
+}
+
+@media only screen and (max-width: 400px) {
+    nav > a {
+        font-size: 4vw;
+    }
+
+    main ul > li {
+        font-size: smaller;
+    }
+
+    main section:nth-child(2) p {
+        margin-bottom: 0;
+        font-size: smaller;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    main > section:first-child img {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    main > section:last-child > div > div > div > p {
         display: none;
     }
+}
 
-    .skillCard {
-        height: 105px;
-        width: 105px;
-        padding-top: 10px;
-        background: #191B2A;
-        border-radius: 20px;
-    }
-
-    #divImage {
-        display: none !important;
-    }
-
-    #divAbout {
-        width: 100% !important;
+@media only screen and (max-width: 750px) {
+    main > section:nth-child(2) img {
+        display: none;
     }
 }
 
-@media only screen and (max-width: 600px) {
-    #divLeft {
-        width: 100% !important;
+
+@media only screen and (max-width: 950px) {
+    main > section:first-child > div {
+        flex-direction: column-reverse;
     }
 
-    #divRight {
-        display: none !important;
-    }
-}
-
-@media only screen and (max-width: 445px) {
-    .navbar-nav .nav-link {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-        font-size: 16px !important;
-        padding-top: 12px !important;
+    main > section:first-child img {
+        margin-left: 0;
+        margin-bottom: 10%;
     }
 }

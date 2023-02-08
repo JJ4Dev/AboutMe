@@ -2,126 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="All about Jan Reist">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A description of the website for search engines and social media">
+    <meta name="keywords" content="about, me, aboutme">
+    <meta name="robots" content="index">
     <meta name="author" content="Jan Reist">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/jrLogo.svg">
     <title>About Me</title>
-    <link rel="icon" href="image/jrLogo.svg">
-    <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="style/bootstrap-icons.css">
     <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
-<nav class="navbar navbar-expand fixed-top">
-    <div class="container-fluid">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="#home"><img src="image/jrLogo.svg" alt="Jan Reist Logo" id="imgLogo"></a>
-            </li>
-            <li class="nav-item">
-                <a href="#home" class="nav-link text-light py-2 px-4 fs-5">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="#about" class="nav-link text-light py-2 px-4 fs-5">About</a>
-            </li>
-            <li class="nav-item">
-                <a href="#skills" class="nav-link text-light py-2 px-4 fs-5">Skills</a>
-            </li>
-        </ul>
 
-        <div class="float-end">
-            <div class="mt-4">
-                <div class="btnLanguage">
-                    <input type="checkbox" class="cbLanguage" id="languageSwitch"/>
-                    <div class="knobs"></div>
-                    <div class="layer"></div>
-                    <label for="languageSwitch">Language Switch</label>
-                </div>
-            </div>
+<header>
+    <nav>
+        <a href="#home"><img src="images/jrLogo.svg" alt="JR Logo"></a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <div>
+            <input type="checkbox" id="languageSwitch">
+            <div></div>
+            <div></div>
+            <label for="languageSwitch">Language Switch</label>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
 
-<main class="container text-light">
-    <section id="home" class="d-flex justify-content-center">
-        <div class="row">
-            <div class="align-self-center w-50" id="divLeft">
-                <div class="container-fluid">
-                    <div class="row">
-                        <h1>
-                            <span href="" class="typewrite" data-period="2000"
-                                  data-type='[ "Hi, I am Jan Reist.", "I Love to Design.", "I am Creative.", "I Love to Develop." ]'>
-                                <span class="wrap"></span>
-                            </span>
-                        </h1>
-                    </div>
-                    <div class="row">
-                        <h4 lng-tag="homeTxt">I'm Jan, motivated and experienced web and frontend developer with a
-                            strong desire to
-                            continue learning.</h4>
-                    </div>
-                </div>
+
+<main>
+    <section id="home">
+        <div>
+            <div>
+                <h2>
+            <span class="typewrite" data-period="2000"
+                  data-type='[ "Hi, I am Jan Reist.", "I Love to Design.", "I am Creative.", "I Love to Develop." ]'>
+                <span></span></span>
+                </h2>
+
+                <h3 lng-tag="homeTxt">I'm Jan, motivated and experienced web and frontend developer with a
+                    strong desire to
+                    continue learning.</h3>
             </div>
-            <div class="w-50 align-self-center" id="divRight">
-                <img src="image/profilePic.png" alt="Jan Reist" class="img-fluid">
-            </div>
+
+            <img src="images/profilePic.png" alt="Profile Image">
+
         </div>
     </section>
 
-
     <section id="about">
-        <div class="row">
-            <h1 class="text-center mb-5" lng-tag="aboutMe">About Me</h1>
-            <div class="w-25" id="divImage">
-                <img src="image/profilePicLarge.png" alt="Jan Reist" class="img-fluid">
-            </div>
-            <div class="w-75" id="divAbout">
-                <h4 lng-tag="hi">Hi There</h4>
-                <p lng-tag="aboutTxt1">My name is Jan Reist. I completed an apprenticeship at Bell Switzerland AG as
-                    an
-                    application developer from 2019 to 2023. During my apprenticeship, I gained a lot of experience in
-                    the web and frontend fields.</p>
-                <p lng-tag="aboutTxt2">I have continued to learn and grow in these areas, working on a variety of
-                    interesting projects. I am
-                    motivated and always looking to expand my skills and knowledge in order to advance as an informatics
-                    professional.</p>
-                <p lng-tag="aboutTxt3">I hope to have the opportunity to apply my abilities in a challenging and dynamic
-                    work environment in
-                    the future.</p>
+        <div>
+            <h2 lng-tag="aboutTitle">About Me</h2>
+            <div>
+                <img src="images/profilePicLarge.png" alt="Jan Reist" class="img-fluid">
+                <div>
+                    <h3 lng-tag="aboutHi">Hi There</h3>
+                    <p lng-tag="aboutTxt1">My name is <a href="https://www.linkedin.com/in/jan-reist" target="_blank"
+                                                         title="Linkedin">Jan Reist</a>. I completed an apprenticeship
+                        at Bell Switzerland AG as
+                        an
+                        application developer from 2019 to 2023. During my apprenticeship, I gained a lot of experience
+                        in
+                        the web and frontend fields.</p>
+                    <p lng-tag="aboutTxt2">I have continued to learn and grow in these areas, working on a variety of
+                        interesting projects. I am
+                        motivated and always looking to expand my skills and knowledge in order to advance as an
+                        informatics
+                        professional.</p>
+                    <p lng-tag="aboutTxt3">I hope to have the opportunity to apply my abilities in a challenging and
+                        dynamic
+                        work environment in
+                        the future.</p>
 
-                <div class="row mt-5">
-                    <div class="col">
-                        <h6><i class="bi bi-person"></i> Name: </h6>
-                        <p class="infoMe">Jan Reist</p>
-                    </div>
-                    <div class="col">
-                        <h6><i class="bi bi-linkedin"></i> LinkedIn:</h6>
-                        <a href="www.linkedin.com/in/jan-reist" class="infoMe">Jan Reist</a>
-                    </div>
-                </div>
-
-                <div class="row mt-4 interestList">
-                    <div class="col">
-                        <h6><i class="bi bi-binoculars"></i> <span lng-tag="interests">Interests:</span></h6>
-                        <ul>
-                            <li><i class="bi bi-code-square"></i>&nbsp; <span lng-tag="design">Design</span></li>
-                            <li><i class="bi bi-browser-edge"></i>&nbsp; <span lng-tag="webDev">Web Dev</span></li>
-                            <li><i class="bi bi-tools"></i>&nbsp; <span lng-tag="tec">Technology</span></li>
-                            <li><i class="bi bi-file-earmark-lock2"></i>&nbsp; <span lng-tag="security">Security</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <h6><i class="bi bi-star"></i> <span lng-tag="hobbys">Hobbys:</span></h6>
-                        <ul>
-                            <li><i class="bi bi-heart-pulse"></i>&nbsp; <span lng-tag="fitness">Fitness</span></li>
-                            <li><i class="bi bi-car-front-fill"></i>&nbsp; <span lng-tag="car">Car enthusiast</span>
-                            </li>
-                            <li><i class="bi bi-music-note-beamed"></i>&nbsp; <span
-                                    lng-tag="music">Music listening</span></li>
-                            <li><i class="bi bi-controller"></i>&nbsp; <span lng-tag="games">Videogames</span></li>
-                        </ul>
+                    <div>
+                        <div>
+                            <h4><i class="bi bi-binoculars"></i> <span lng-tag="interests">Interests:</span></h4>
+                            <ul>
+                                <li><i class="bi bi-code-square"></i>&nbsp; <span lng-tag="design">Design</span></li>
+                                <li><i class="bi bi-browser-edge"></i>&nbsp; <span lng-tag="webDev">Web Dev</span></li>
+                                <li><i class="bi bi-tools"></i>&nbsp; <span lng-tag="tec">Technology</span></li>
+                                <li><i class="bi bi-file-earmark-lock2"></i>&nbsp; <span
+                                        lng-tag="security">Security</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4><i class="bi bi-star"></i> <span lng-tag="hobbys">Hobbys:</span></h4>
+                            <ul>
+                                <li><i class="bi bi-heart-pulse"></i>&nbsp; <span lng-tag="fitness">Fitness</span></li>
+                                <li><i class="bi bi-car-front-fill"></i>&nbsp; <span lng-tag="car">Car</span>
+                                </li>
+                                <li><i class="bi bi-music-note-beamed"></i>&nbsp; <span
+                                        lng-tag="music">Music</span></li>
+                                <li><i class="bi bi-controller"></i>&nbsp; <span lng-tag="games">Videogames</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,158 +105,116 @@
     </section>
 
     <section id="skills">
-        <div class="row justify-content-center">
-            <h1 class="text-center mb-3" lng-tag="skills">Skills</h1>
-            <div class="row row-cols-3">
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/htmlLogo.png" alt="HTML Logo">
-                            <h6>HTML</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>Hypertext Markup Language</p>
-                        </div>
+        <div>
+            <h2 lng-tag="skillsTitle">Skills</h2>
+            <div>
+
+                <div>
+                    <div>
+                        <img src="images/logo/htmlLogo.png" alt="HTML Logo">
+                        <p>HTML</p>
                     </div>
+                    <p>Hypertext Markup Language</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/cssLogo.png" alt="CSS Logo">
-                            <h6>CSS</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>Cascading <br> Style <br> Sheets</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/cssLogo.png" alt="CSS Logo">
+                        <p>CSS</p>
                     </div>
+                    <p>Cascading Style Sheets</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/jsLogo.png" alt="JS Logo">
-                            <h6>JS</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>Javascript Scriptlanguage for Website</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/jsLogo.png" alt="JS Logo">
+                        <p>JS</p>
                     </div>
+                    <p>JavaScript Client-Side Language</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/bootstrapLogo.png" alt="Bootstrap Logo">
-                            <h6>BS</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>Bootstrap <br> CSS-Framework <br> for Website</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/bootstrapLogo.png" alt="BS Logo">
+                        <p>BS</p>
                     </div>
+                    <p>Bootstrap Responsive CSS-Framework</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/jqueryLogo.png" alt="JQuery Logo">
-                            <h6>JQuery</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>JQuery <br> JS-Libary <br> for Website</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/jqueryLogo.png" alt="JQuery Logo">
+                        <p>JQuery</p>
                     </div>
+                    <p>JQuery JS simplification library</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/sqlLogo.png" alt="SQL Logo">
-                            <h6>SQL</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>Structured <br> Query <br> Language</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/sqlLogo.png" alt="SQL Logo">
+                        <p>SQL</p>
                     </div>
+                    <p>Structured Query Language</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/c-sharpLogo.png" alt="C# Logo">
-                            <h6>C#</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>C-Sharp <br> Object-oriented programming</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/c-sharpLogo.png" alt="C# Logo">
+                        <p>C#</p>
                     </div>
+                    <p>C-Sharp OOP Language for Website</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/aspLogo.png" alt="ASP.NET Logo">
-                            <h6>ASP.NET</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>Active Server Pages .NET <br> utilize C#</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/aspLogo.png" alt="asp.net Logo">
+                        <p>ASP.NET</p>
                     </div>
+                    <p>ASP.NET C# & VB Framework </p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/phpLogo.png" alt="PHP Logo">
-                            <h6>PHP</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>Hypertext Preprocessor <br> for Website</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/phpLogo.png" alt="PHP Logo">
+                        <p>PHP</p>
                     </div>
+                    <p>Hypertext Preprocessor Server-Side Language</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/javaLogo.png" alt="Java Logo">
-                            <h6>Java</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>Java <br> Object-oriented programming</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/javaLogo.png" alt="Java Logo">
+                        <p>Java</p>
                     </div>
+                    <p>Java OOP Language for multiple platforms</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/sapLogo.png" alt="SAP Logo">
-                            <h6>SAP</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>System Applications Products</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/sapLogo.png" alt="SAP Logo">
+                        <p>SAP/ABAP</p>
                     </div>
+                    <p>Advanced Business Application Programming</p>
                 </div>
 
-                <div class="col d-flex justify-content-center mb-5">
-                    <div class="skillCard row">
-                        <div class="cardImage text-center ps-2 pe-0">
-                            <img class="img-fluid pb-1" src="image/logo/fioriLogo.png" alt="Fiori Logo">
-                            <h6>Fiori</h6>
-                        </div>
-                        <div class="cardText">
-                            <p>Role-based <br> user interface <br> for SAP</p>
-                        </div>
+                <div>
+                    <div>
+                        <img src="images/logo/fioriLogo.png" alt="Fiori Logo">
+                        <p>Fiori</p>
                     </div>
+                    <p>SAP User Experience App-Design Framework</p>
                 </div>
+
             </div>
+
+            <a id="rocketUp"><i class="bi bi-rocket"></i></a>
+
         </div>
-        <a class="text-center" id="rocketUp"><h1><i class="bi bi-rocket"></i></h1></a>
     </section>
 </main>
-<script src="script/bootstrap.bundle.min.js"></script>
-<script src="script/script.js"></script>
+
+<script src="script/translate.js"></script>
+<script src="script/rocket.js"></script>
+<script src="script/typewriter.js"></script>
 </body>
 </html>
