@@ -1,5 +1,4 @@
 {
-  "skills" : "Skills",
   "homeTxt" : "I'm Jan, motivated and experienced web and frontend developer with a strong desire to continue learning.",
   "aboutTitle" : "About Me",
   "aboutHi" : "Hi There",
@@ -7,8 +6,8 @@
   "aboutTxt2" : "I have continued to learn and grow in these areas, working on a variety of interesting projects. I am motivated and always looking to expand my skills and knowledge in order to advance as an informatics professional.",
   "aboutTxt3" : "I hope to have the opportunity to apply my abilities in a challenging and dynamic work environment in the future.",
   "skillsTitle" : "Skills",
-  "interests" : "Interests",
-  "hobbys" : "Hobbys",
+  "interests" : "Interests:",
+  "hobbys" : "Hobbys:",
   "design" : "Design",
   "webDev" : "Web Dev",
   "tec" : "Technology",
