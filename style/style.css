@@ -58,7 +58,7 @@ nav img {
     height: 3.75rem;
 }
 
-nav a:first-child {
+nav a:first-of-type {
     padding: 0 6px;
 }
 
@@ -141,13 +141,14 @@ main > section {
 main > section:nth-child(2n) {
     background: #21243C;
     padding-top: 4rem;
+    background-clip: content-box;
 }
 
-main > section:first-child {
+main > section:first-of-type {
     padding-top: 4rem;
 }
 
-main > section > div:first-child {
+main > section > div:first-of-type {
     width: 80%;
     height: 100%;
     margin: 0 10%;
@@ -175,12 +176,9 @@ main > section > div {
     justify-content: center;
 }
 
-main > section:first-child > div {
+main section:first-of-type div {
     align-items: center;
     flex-direction: row;
-}
-
-main > section:first-child > div > div {
     text-align: center;
 }
 
@@ -189,32 +187,33 @@ main img {
     height: auto;
 }
 
-main > section:first-child > div > img {
+main section:first-of-type img {
     margin-left: 10%;
 }
 
-main > section:first-child span {
+main section:first-of-type span {
     border-right: 0.08em solid #fff
 }
 
-main > section:nth-child(2) img {
+main section:nth-of-type(2) img {
     width: 30%;
     height: auto;
     padding-right: 2%;
     object-fit: scale-down;
 }
 
-main > section:nth-child(2) div {
+main section:nth-of-type(2) div {
     display: flex;
     justify-content: start;
     flex-direction: column;
+    font-size: 18px;
 }
 
-main > section:nth-child(2) > div > div {
+main section:nth-of-type(2) > div > div {
     flex-direction: row;
 }
 
-main > section:nth-child(2) > div > div > div > div {
+main section:nth-of-type(2) > div > div > div > div {
     flex-direction: row;
     justify-content: space-around;
 }
@@ -223,11 +222,11 @@ main a {
     color: #FF4A57;
 }
 
-main > section:last-child > div {
+main section:last-of-type > div {
     flex-direction: column;
 }
 
-main > section:last-child > div > div {
+main section:last-of-type > div > div {
     display: grid;
     width: 100%;
     height: 100%;
@@ -241,7 +240,7 @@ main > section:last-child > div > div {
     ". . .";
 }
 
-main > section:last-child > div > div > div {
+main section:last-of-type > div > div > div {
     background: #141731;
     display: flex;
     justify-content: center;
@@ -251,14 +250,15 @@ main > section:last-child > div > div > div {
     height: 100%;
 }
 
-main > section:last-child > div > div > div > p {
+main section:last-of-type p {
     align-self: center;
     text-align: center;
     color: #f5f5f5;
     margin: 0 10px 0 0;
+    font-size: 18px;
 }
 
-main > section:last-child > div > div > div > div {
+main section:last-of-type div div div div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,21 +266,21 @@ main > section:last-child > div > div > div > div {
     padding: 10px 10px 5px 10px;
 }
 
-main > section:last-child img + p {
+main section:last-of-type img + p {
     margin: 5px 0 0 0;
     color: #FF4A57;
 }
 
-main > section:last-child img {
+main section:last-of-type img {
     width: 60px;
     height: 60px;
     object-fit: scale-down;
 }
 
-main > section:last-child a {
+main section:last-of-type a {
     text-align: center;
     margin: 10px 0;
-    font-size: 32px;
+    font-size: 36px;
 }
 
 nav img:hover {
@@ -336,7 +336,7 @@ nav img:hover {
     }
 }
 
-main > section:last-child > div > div > div:hover img {
+main section:last-of-type div div div:hover img {
     -webkit-animation: flip-vertical 1s;
     animation: flip-vertical 1s;
 }
@@ -367,7 +367,7 @@ main > section:last-child > div > div > div:hover img {
     }
 }
 
-.bi-rocket:hover {
+main section:last-of-type a:hover {
     cursor: pointer;
 }
 
@@ -396,7 +396,7 @@ main > section:last-child > div > div > div:hover img {
 }
 
 @media only screen and (max-width: 350px) {
-    main > section:last-child img {
+    main section:last-of-type img {
         width: 100%;
         height: 100%;
     }
@@ -412,43 +412,51 @@ main > section:last-child > div > div > div:hover img {
         font-size: smaller;
     }
 
-    main section:nth-child(2) p {
+    main section:nth-of-type(2) p {
         margin-bottom: 0;
         font-size: smaller;
     }
 }
 
 @media only screen and (max-width: 500px) {
-    main > section:first-child img {
+    main section:first-of-type img {
         width: 80%;
     }
 }
 
 @media only screen and (max-width: 680px) {
-    main > section:last-child > div > div > div > p {
+    main section:last-of-type > div > div > div > p {
         display: none;
     }
 }
 
 @media only screen and (max-width: 750px) {
-    main > section:nth-child(2) img {
+    main section:nth-of-type(2) img {
         display: none;
     }
 }
 
-@media only screen and (max-width: 900px) {
-    main > section:last-child > div > div {
+@media only screen and (max-width: 930px) {
+    main section:last-of-type > div > div {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(4, 1fr);
+    }
+
+    main section:nth-of-type(2) div {
+        font-size: 16px;
+    }
+
+    main section:last-of-type p {
+        font-size: 16px;
     }
 }
 
 @media only screen and (max-width: 950px) {
-    main > section:first-child > div {
+    main section:first-of-type > div {
         flex-direction: column-reverse;
     }
 
-    main > section:first-child img {
+    main section:first-of-type img {
         margin-left: 0;
         margin-bottom: 10%;
     }
