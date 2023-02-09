@@ -1,8 +1,19 @@
 const rocket = document.getElementById("rocketUp");
-rocket.addEventListener("click", function () {
+
+const scrollToHome = () => {
+    document.getElementById("home").scrollIntoView({behavior: 'smooth'});
+};
+
+const addRocketAnimation = () => {
     rocket.classList.add("rocketAnimation");
-    setTimeout(function () {
-        document.getElementById("home").scrollIntoView({behavior: 'smooth'});
-        rocket.classList.remove("rocketAnimation")
-    }, 550);
+};
+
+const removeRocketAnimation = () => {
+    rocket.classList.remove("rocketAnimation");
+};
+
+rocket.addEventListener("click", () => {
+    addRocketAnimation();
+    setTimeout(scrollToHome, 750);
+    setTimeout(removeRocketAnimation, 1000);
 });

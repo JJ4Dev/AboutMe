@@ -187,10 +187,6 @@ main img {
     height: auto;
 }
 
-main section:first-of-type img {
-    margin-left: 10%;
-}
-
 main section:first-of-type span {
     border-right: 0.08em solid #fff
 }
