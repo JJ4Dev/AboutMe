@@ -1,0 +1,130 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #141731;
+    height: 4rem;
+    position: fixed;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f5f5f5;
+    padding: 0 12px;
+    font-size: 20px;
+    position: relative;
+}
+
+nav a:hover {
+    color: #727FB1;
+}
+
+nav a:not(:first-of-type)::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 4px;
+    margin: 0 10%;
+    border-radius: 4px;
+    background-color: #FF4A57;
+    bottom: -5px;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+nav a:not(:first-of-type):hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+nav img {
+    width: 3.75rem;
+    height: 3.75rem;
+}
+
+nav a:first-of-type {
+    padding: 0 6px;
+}
+
+
+nav > div > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+nav > div {
+    position: relative;
+    top: 14.4%;
+    width: 59px;
+    height: 29px;
+    margin: -16px 10px 0 auto;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+nav input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+nav > div > div:first-of-type {
+    z-index: 2;
+}
+
+nav > div > div:last-of-type {
+    width: 100%;
+    background-color: #FF4A57;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+nav > div > div:first-of-type::before {
+    content: url(../images/germanyFlag.png);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #272a40;
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s;
+}
+
+nav input:active + div:first-of-type::before {
+    width: 46px;
+    border-radius: 100px;
+}
+
+nav input:checked:active + div:first-of-type::before {
+    margin-left: -26px;
+}
+
+nav input:checked + div:first-of-type::before {
+    content: url(../images/englandFlag.png);
+    left: 32px;
+}
+
+nav img:hover {
+    -webkit-animation: jello-horizontal 0.85s;
+    animation: jello-horizontal 0.85s;
+}
+
+nav > div:hover > div:first-of-type::before {
+    -webkit-animation: rotate-center 5s linear infinite both;
+    animation: rotate-center 5s linear infinite both;
+}
