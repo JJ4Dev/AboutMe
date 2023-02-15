@@ -1,19 +1,21 @@
-const rocket = document.getElementById("rocketUp");
+const rocket = document.getElementById('rocketUp');
 
-const scrollToHome = () => {
-    document.getElementById("home").scrollIntoView({behavior: 'smooth'});
-};
+function scrollToHome() {
+    document.getElementById('home').scrollIntoView({behavior: 'smooth'});
+}
 
-const addRocketAnimation = () => {
-    rocket.classList.add("rocketAnimation");
-};
+function addRocketAnimation() {
+    rocket.classList.add('rocketAnimation');
+}
 
-const removeRocketAnimation = () => {
-    rocket.classList.remove("rocketAnimation");
-};
+function removeRocketAnimation() {
+    rocket.classList.remove('rocketAnimation');
+}
 
-rocket.addEventListener("click", () => {
+function handleClick() {
     addRocketAnimation();
     setTimeout(scrollToHome, 750);
     setTimeout(removeRocketAnimation, 1000);
-});
+}
+
+rocket.addEventListener('click', handleClick);

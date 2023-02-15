@@ -1,6 +1,11 @@
-document.addEventListener("scroll", function () {
-    let currentUrl = window.location.href;
-    if (currentUrl.includes("#")) {
-        history.pushState({}, "", currentUrl.split("#")[0]);
+function handleScrollEvent() {
+    const currentUrl = window.location.href;
+
+    if (currentUrl.includes('#')) {
+        const url = new URL(currentUrl);
+        url.hash = '';
+        history.replaceState({}, document.title, url.toString());
     }
-});
+}
+
+document.addEventListener('scroll', handleScrollEvent, {passive: true, capture: false, once: false});

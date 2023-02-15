@@ -1,47 +1,40 @@
-function Translate() {
-
-    this.init = function (attribute, lng) {
+class Translator {
+    constructor(attribute, lng) {
         this.attribute = attribute;
         this.lng = lng;
     }
 
-    this.process = function () {
-        let _self = this;
-        let xrhFile = new XMLHttpRequest();
-
-        xrhFile.open("GET", "lng/" + this.lng + ".json", true);
-        xrhFile.onreadystatechange = function () {
-            if (xrhFile.readyState === 4) {
-                if (xrhFile.status === 200 || xrhFile.status === 0) {
-                    let LngObject = JSON.parse(xrhFile.responseText);
-                    let allDom = document.getElementsByTagName("*");
-                    for (let i = 0; i < allDom.length; i++) {
-                        let elem = allDom[i];
-                        let key = elem.getAttribute(_self.attribute);
-                        if (key != null) {
-                            elem.innerHTML = LngObject[key];
+    process() {
+        const xhrFile = new XMLHttpRequest();
+        xhrFile.open('GET', `lng/${this.lng}.json`, true);
+        xhrFile.onreadystatechange = () => {
+            if (xhrFile.readyState === 4) {
+                if (xhrFile.status === 200 || xhrFile.status === 0) {
+                    const lngObject = JSON.parse(xhrFile.responseText);
+                    const allElements = document.getElementsByTagName('*');
+                    for (const element of allElements) {
+                        const key = element.getAttribute(this.attribute);
+                        if (key !== null) {
+                            element.innerHTML = lngObject[key];
                         }
                     }
-
                 }
             }
-        }
-        xrhFile.send();
+        };
+        xhrFile.send();
     }
+}
+
+function handleLanguageSwitch(event) {
+    const lng = event.target.checked ? 'de' : 'en';
+    translate(lng, 'lng-tag');
 }
 
 function translate(lng, tagAttr) {
-    let translate = new Translate();
-    translate.init(tagAttr, lng);
-    translate.process();
+    const translator = new Translator(tagAttr, lng);
+    translator.process();
 }
 
-document.getElementById('languageSwitch').addEventListener('change', function () {
-    if (this.checked) {
-        translate('de', 'lng-tag');
-    } else {
-        translate('en', 'lng-tag');
-    }
-});
+document.getElementById('languageSwitch').addEventListener('change', handleLanguageSwitch);
 
-translate('en','lng-tag');
+translate('en', 'lng-tag');
