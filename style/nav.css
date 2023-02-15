@@ -123,8 +123,3 @@ nav img:hover {
     -webkit-animation: jello-horizontal 0.85s;
     animation: jello-horizontal 0.85s;
 }
-
-nav > div:hover > div:first-of-type::before {
-    -webkit-animation: rotate-center 5s linear infinite both;
-    animation: rotate-center 5s linear infinite both;
-}

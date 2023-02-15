@@ -46,24 +46,6 @@
     }
 }
 
-@-webkit-keyframes rotate-center {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotate-center {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 @-webkit-keyframes flip-vertical {
     0% {
         transform: rotateY(0);
