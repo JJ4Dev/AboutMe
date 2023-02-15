@@ -103,7 +103,7 @@ nav > div > div:last-of-type {
     z-index: 1;
 }
 
-nav > div > div:first-of-type:before {
+nav > div > div:first-of-type::before {
     content: url(../images/germanyFlag.png);
     position: absolute;
     top: 3px;
@@ -118,16 +118,16 @@ nav > div > div:first-of-type:before {
     transition: 0.3s ease all, left 0.3s;
 }
 
-nav input:active + div:first-of-type:before {
+nav input:active + div:first-of-type::before {
     width: 46px;
     border-radius: 100px;
 }
 
-nav input:checked:active + div:first-of-type:before {
+nav input:checked:active + div:first-of-type::before {
     margin-left: -26px;
 }
 
-nav input:checked + div:first-of-type:before {
+nav input:checked + div:first-of-type::before {
     content: url(../images/englandFlag.png);
     left: 32px;
 }
