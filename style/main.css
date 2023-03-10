@@ -33,7 +33,7 @@ main section:first-of-type div {
 }
 
 main section:not(:last-of-type) img {
-    width: 50%;
+    width: 35%;
     height: auto;
 }
 
