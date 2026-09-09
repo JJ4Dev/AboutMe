@@ -1,225 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="About Me | Jan Reist">
-    <meta name="keywords" content="about jan reist, about jan, about reist, about me">
-    <meta name="author" content="Jan Reist">
-    <title>About | Jan Reist</title>
-    <link rel="icon" href="images/jrLogo.svg">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/nav.css">
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/animation.css">
-    <link rel="stylesheet" href="style/mediaQuery.css">
-    <link rel="stylesheet" href="style/bootstrap-icons.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0a0c0b">
+<meta name="description" content="Jan Reist — Software Engineer in Basel, Switzerland. C#/.NET, full-stack applications, integrations and thoughtful web experiences.">
+<meta property="og:title" content="Jan Reist — Software Engineer"><meta property="og:description" content="Thoughtful interfaces. Powerful foundations. C#/.NET and full-stack software engineering, from Basel, Switzerland."><meta property="og:type" content="website">
+<title>Jan Reist — Software Engineer</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style/portfolio.css"><script src="script/portfolio.js" defer></script>
 </head>
 <body>
-
-<header>
-    <nav>
-        <a href="#home"><img src="images/jrLogo.svg" alt="JR Logo"></a>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <div>
-            <input type="checkbox" id="languageSwitch">
-            <div></div>
-            <div></div>
-            <label for="languageSwitch">Language Switch</label>
-        </div>
-    </nav>
-</header>
-
-
-<main>
-    <section id="home">
-        <div>
-            <div>
-                <h2>
-            <span class="typewrite" data-period="2000"
-                  data-type='[ "Hi, I am Jan Reist.", "I am Creative.", "I Love to Design.", "I Love to Develop." ]'>
-                <span></span></span>
-                </h2>
-
-                <h3 lng-tag="homeTxt">I'm Jan, motivated and experienced web and frontend developer with a
-                    strong desire to
-                    continue learning.</h3>
-            </div>
-
-            <img src="images/HemdMirrored1000x1000.png" alt="Profile Image">
-
-        </div>
-    </section>
-
-    <section id="about">
-        <div>
-            <h2 lng-tag="aboutTitle">About Me</h2>
-            <div>
-                <img src="images/AnzugTransparent827x1000.png" alt="Jan Reist" class="img-fluid">
-                <div>
-                    <h3 lng-tag="aboutHi">Hi There</h3>
-                    <p><label lng-tag="aboutTxt1">My name is </label><a href="https://www.linkedin.com/in/jan-reist"
-                                                                        target="_blank"
-                                                                        title="Linkedin">Jan Reist</a>.
-                        <label lng-tag="aboutTxt2">I completed an apprenticeship at Bell Switzerland AG as an
-                            application developer from 2019 to 2023. During my apprenticeship, I gained a lot of
-                            experience
-                            in
-                            the web and frontend fields.</label></p>
-                    <p lng-tag="aboutTxt3">I have continued to learn and grow in these areas, working on a variety of
-                        interesting projects. I am
-                        motivated and always looking to expand my skills and knowledge in order to advance as an
-                        informatics
-                        professional.</p>
-                    <p lng-tag="aboutTxt4">I hope to have the opportunity to apply my abilities in a challenging and
-                        dynamic
-                        work environment in
-                        the future.</p>
-
-                    <div>
-                        <div>
-                            <h4><i class="bi bi-binoculars"></i> <span lng-tag="interests">Interests:</span></h4>
-                            <ul>
-                                <li><i class="bi bi-code-square"></i>&nbsp; <span lng-tag="design">Design</span></li>
-                                <li><i class="bi bi-browser-edge"></i>&nbsp; <span lng-tag="webDev">Web Dev</span></li>
-                                <li><i class="bi bi-tools"></i>&nbsp; <span lng-tag="tec">Technology</span></li>
-                                <li><i class="bi bi-file-earmark-lock2"></i>&nbsp; <span
-                                        lng-tag="security">Security</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4><i class="bi bi-star"></i> <span lng-tag="hobbys">Hobbys:</span></h4>
-                            <ul>
-                                <li><i class="bi bi-heart-pulse"></i>&nbsp; <span lng-tag="fitness">Fitness</span></li>
-                                <li><i class="bi bi-car-front-fill"></i>&nbsp; <span lng-tag="car">Car</span>
-                                </li>
-                                <li><i class="bi bi-music-note-beamed"></i>&nbsp; <span
-                                        lng-tag="music">Music</span></li>
-                                <li><i class="bi bi-controller"></i>&nbsp; <span lng-tag="games">Videogames</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div>
-            <h2 lng-tag="skillsTitle">Skills</h2>
-            <div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/htmlLogo.png" alt="HTML Logo">
-                        <p>HTML5</p>
-                    </div>
-                    <!--                     <p>Hypertext Markup Language</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/cssLogo.png" alt="CSS Logo">
-                        <p>CSS3</p>
-                    </div>
-                    <!--                     <p>Cascading Style Sheets</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/jsLogo.png" alt="JS Logo">
-                        <p>JS</p>
-                    </div>
-                    <!--                     <p>JavaScript <i class="bi bi-arrow-right-short"></i> Client-Side Language</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/bootstrapLogo.png" alt="BS Logo">
-                        <p>BS</p>
-                    </div>
-                    <!--                     <p>Bootstrap <i class="bi bi-arrow-right-short"></i> Responsive CSS-Framework</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/jqueryLogo.png" alt="JQuery Logo">
-                        <p>JQuery</p>
-                    </div>
-                    <!--                     <p>JQuery <i class="bi bi-arrow-right-short"></i> JS simplification library</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/sqlLogo.png" alt="SQL Logo">
-                        <p>SQL</p>
-                    </div>
-                    <!--                     <p>Structured Query Language</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/c-sharpLogo.png" alt="C# Logo">
-                        <p>C#</p>
-                    </div>
-                    <!--                     <p>C-Sharp <i class="bi bi-arrow-right-short"></i> OOP Language for Website</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/aspLogo.png" alt="asp.net Logo">
-                        <p>ASP.NET</p>
-                    </div>
-                    <!--                     <p>ASP.NET <i class="bi bi-arrow-right-short"></i> C# & VB Framework </p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/phpLogo.png" alt="PHP Logo">
-                        <p>PHP</p>
-                    </div>
-                    <!--                     <p>Hypertext Preprocessor <i class="bi bi-arrow-right-short"></i> Server-Side Language</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/javaLogo.png" alt="Java Logo">
-                        <p>Java</p>
-                    </div>
-                    <!--                     <p>Java <i class="bi bi-arrow-right-short"></i> OOP Language for multiple platforms</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/sapLogo.png" alt="SAP Logo">
-                        <p>SAP/ABAP</p>
-                    </div>
-                    <!--                     <p>Advanced Business Application Programming</p>-->
-                </div>
-
-                <div>
-                    <div>
-                        <img src="images/logo/fioriLogo.png" alt="Fiori Logo">
-                        <p>Fiori</p>
-                    </div>
-                    <!--                     <p>SAP User Experience App-Design Framework</p>-->
-                </div>
-
-            </div>
-
-            <a id="rocketUp" href="javascript:" aria-label="Page Up"><i class="bi bi-rocket"></i></a>
-
-        </div>
-    </section>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a><div class="scroll-progress" aria-hidden="true"></div>
+<header class="site-header"><a class="wordmark" href="#top" aria-label="Jan Reist home" data-i18n-aria="homeLabel">reist<span>.dev</span><i></i></a><nav aria-label="Main navigation" data-i18n-aria="navLabel" class="desktop-nav"><a href="#expertise" data-i18n="navExpertise">Expertise</a><a href="#journey" data-i18n="navJourney">Journey</a><a href="#about" data-i18n="navAbout">About</a></nav><div class="header-actions"><div class="language-switch" role="group" aria-label="Language" data-i18n-aria="languageLabel"><button class="active" data-language="en" aria-pressed="true" aria-label="English" lang="en">EN</button><span aria-hidden="true">/</span><button data-language="de" aria-pressed="false" aria-label="Deutsch" lang="de">DE</button></div><a class="contact-link" href="#contact"><span data-i18n="navContact">Let's connect</span><span aria-hidden="true">↗</span></a></div><nav class="mobile-nav" aria-label="Main navigation" data-i18n-aria="navLabel"><a href="#expertise" data-i18n="navExpertise">Expertise</a><a href="#journey" data-i18n="navJourney">Journey</a><a href="#about" data-i18n="navAbout">About</a><a href="#contact" data-i18n="contact">Contact</a></nav></header>
+<main id="main">
+<section class="hero section-shell" id="top" aria-labelledby="hero-name">
+ <div class="hero-topline mono"><span><i class="status-dot"></i><span data-i18n="roleLocation">Software Engineer · Basel, Switzerland</span></span><span class="hero-edition">PORTFOLIO / 2026</span></div>
+ <div class="hero-layout"><div class="hero-copy"><h1 id="hero-name"><span class="name-line"><span>JAN</span><span class="name-mark" aria-hidden="true">✳</span></span><span class="name-line">REIST<span class="name-dot">.</span></span></h1><h2 class="hero-statement"><span data-i18n="heroLine1">Thoughtful interfaces.</span><br><span class="muted" data-i18n="heroLine2">Powerful foundations.</span></h2><p class="hero-description" data-i18n="heroBody">I'm Jan. I build full-stack software with C# and .NET, connecting the systems behind the screen with the experience in front of it.</p><a class="button button-primary magnetic" href="#expertise"><span data-i18n="explore">Explore my expertise</span><span class="button-icon" aria-hidden="true">↗</span></a></div>
+ <div class="hero-visual" aria-hidden="true"><div class="visual-cross cross-one">+</div><div class="visual-cross cross-two">+</div><canvas id="core-canvas"></canvas><div class="core-label core-label-one"><i></i>C# / .NET</div><div class="core-label core-label-two">IDEA → INTERFACE</div><div class="visual-caption mono"><span>CONNECTED BY CURIOSITY</span><span>01 / ∞</span></div></div></div>
+ <div class="hero-bottom"><a class="scroll-hint mono" href="#expertise"><span class="scroll-track" aria-hidden="true"><i></i></span><span data-i18n="scroll">Scroll to explore</span></a><span class="hero-bottom-note mono">C# · .NET · BLAZOR · AZURE</span><span class="hero-coordinate mono">BASEL, CH</span></div>
+</section>
+<div class="stack-ribbon" aria-hidden="true"><div class="ribbon-track"><span>C# / .NET</span><i>✳</i><span>BLAZOR</span><i>✳</i><span>INTEGRATIONS</span><i>✳</i><span>AZURE</span><i>✳</i><span>FULL-STACK</span><i>✳</i><span>C# / .NET</span><i>✳</i><span>BLAZOR</span><i>✳</i><span>INTEGRATIONS</span><i>✳</i><span>AZURE</span><i>✳</i><span>FULL-STACK</span><i>✳</i></div></div>
+<section class="expertise section-shell section-space" id="expertise" aria-labelledby="expertise-title">
+ <div class="section-kicker mono"><span>01 / <span data-i18n="navExpertise">Expertise</span></span><span class="kicker-rule"></span><span data-i18n="bigPicture">THE BIG PICTURE</span></div><div class="section-heading"><h2 id="expertise-title"><span data-i18n="expertiseLine1">From interface</span><br><span class="muted" data-i18n="expertiseLine2">to infrastructure.</span></h2><p data-i18n="expertiseIntro">The parts I enjoy connecting.</p></div>
+ <div class="expertise-layout"><div class="capability-list">
+ <article class="capability active"><span class="cap-number mono">01</span><div class="cap-content"><h3><button class="cap-title-button" id="cap-button-0" data-capability="0" aria-expanded="true" aria-controls="cap-panel-0"><span class="cap-title" data-i18n="cap0Title">Backend & integrations</span><span class="cap-plus" aria-hidden="true">↗</span></button></h3><div class="cap-detail" id="cap-panel-0" role="region" aria-labelledby="cap-button-0"><p data-i18n="cap0Body">Services that connect applications, data and business processes.</p><span class="cap-tags mono">C# / ASP.NET CORE / SOAP & WCF</span></div></div></article>
+ <article class="capability"><span class="cap-number mono">02</span><div class="cap-content"><h3><button class="cap-title-button" id="cap-button-1" data-capability="1" aria-expanded="false" aria-controls="cap-panel-1"><span class="cap-title" data-i18n="cap1Title">Web experiences</span><span class="cap-plus" aria-hidden="true">↗</span></button></h3><div class="cap-detail" id="cap-panel-1" role="region" aria-labelledby="cap-button-1"><p data-i18n="cap1Body">Responsive interfaces, reusable components and thoughtful interactions.</p><span class="cap-tags mono">BLAZOR / WEBASSEMBLY / JAVASCRIPT / FIGMA</span></div></div></article>
+ <article class="capability"><span class="cap-number mono">03</span><div class="cap-content"><h3><button class="cap-title-button" id="cap-button-2" data-capability="2" aria-expanded="false" aria-controls="cap-panel-2"><span class="cap-title" data-i18n="cap2Title">Data & cloud</span><span class="cap-plus" aria-hidden="true">↗</span></button></h3><div class="cap-detail" id="cap-panel-2" role="region" aria-labelledby="cap-button-2"><p data-i18n="cap2Body">The data flows and real-time features that keep applications connected.</p><span class="cap-tags mono">SQL SERVER / AZURE / SIGNALR</span></div></div></article>
+ <article class="capability"><span class="cap-number mono">04</span><div class="cap-content"><h3><button class="cap-title-button" id="cap-button-3" data-capability="3" aria-expanded="false" aria-controls="cap-panel-3"><span class="cap-title" data-i18n="cap3Title">Modernization</span><span class="cap-plus" aria-hidden="true">↗</span></button></h3><div class="cap-detail" id="cap-panel-3" role="region" aria-labelledby="cap-button-3"><p data-i18n="cap3Body">Understand the existing system. Trace the problem. Build the next version with purpose.</p><span class="cap-tags mono" data-i18n="modernTags">LEGACY SYSTEMS / MIGRATION / DEBUGGING</span></div></div></article>
+ <article class="capability"><span class="cap-number mono">05</span><div class="cap-content"><h3><button class="cap-title-button" id="cap-button-4" data-capability="4" aria-expanded="false" aria-controls="cap-panel-4"><span class="cap-title" data-i18n="cap4Title">AI in applications</span><span class="cap-plus" aria-hidden="true">↗</span></button></h3><div class="cap-detail" id="cap-panel-4" role="region" aria-labelledby="cap-button-4"><p data-i18n="cap4Body">Connecting agents and tools to software, with attention to permissions and evaluation.</p><span class="cap-tags mono" data-i18n="aiTags">AZURE OPENAI / AGENTS / TOOL INTEGRATION</span></div></div></article>
+ </div><div class="system-visual" aria-hidden="true"><div class="system-top mono"><span data-i18n="connectedSystem">ONE CONNECTED SYSTEM</span><span class="status-dot"></span></div><div class="system-diagram"><div class="system-orbit"></div><div class="system-orbit second"></div><div class="system-core">{<span>r</span>}</div><div class="system-node node-interface">INTERFACE</div><div class="system-node node-services is-selected">SERVICES</div><div class="system-node node-data">DATA</div><div class="system-node node-cloud">CLOUD</div><div class="system-node node-ai">AI</div><svg class="system-lines" viewBox="0 0 400 400"><path d="M200 60V200M65 175L200 200M105 325L200 200M335 175L200 200M295 325L200 200"/><circle class="flow-dot" r="3"><animateMotion dur="3s" repeatCount="indefinite" path="M200 60V200L105 325"/></circle><circle class="flow-dot" r="3"><animateMotion dur="4s" repeatCount="indefinite" path="M335 175L200 200L65 175"/></circle></svg></div><div class="system-bottom"><span class="system-detail" data-i18n="cap0Title">Backend & integrations</span><span class="mono system-index">01—05</span></div></div></div>
+</section>
+<section class="journey section-shell section-space" id="journey" aria-labelledby="journey-title">
+ <div class="section-kicker mono reveal"><span>02 / <span data-i18n="navJourney">Journey</span></span><span class="kicker-rule"></span><span data-i18n="inProgress">ALWAYS IN PROGRESS</span></div>
+ <div class="section-heading reveal"><h2 id="journey-title"><span data-i18n="journeyLine1">Always learning.</span><br><span class="muted" data-i18n="journeyLine2">Always building.</span></h2><p data-i18n="journeyIntro">A foundation in application development. A curiosity that keeps growing.</p></div>
+ <div class="timeline">
+  <article class="timeline-entry reveal"><div class="timeline-date mono"><span data-i18n="microDates">2023 — PRESENT</span><span class="timeline-line" aria-hidden="true"></span></div><div class="timeline-content"><div class="job-heading"><div><span class="eyebrow" data-i18n="currentChapter">CURRENT CHAPTER</span><h3>microtom ag</h3></div><a class="text-link" href="https://www.linkedin.com/in/jan-reist/" target="_blank" rel="noopener noreferrer" aria-label="Jan Reist on LinkedIn">↗</a></div><p class="job-role">Software Engineer</p><p class="job-description" data-i18n="microBody">From Junior Developer to Software Engineer. Working across .NET applications, integrations and the interfaces that bring them together.</p><div class="job-tags mono"><span>C# / .NET</span><span>BLAZOR</span><span data-i18n="integrations">INTEGRATIONS</span></div></div></article>
+  <article class="timeline-entry reveal"><div class="timeline-date mono"><span>2019 — 2023</span><span class="timeline-line" aria-hidden="true"></span></div><div class="timeline-content"><div class="job-heading"><div><span class="eyebrow" data-i18n="foundation">THE FOUNDATION</span><h3>Bell Food Group AG</h3></div></div><p class="job-role" data-i18n="bellRole">Application development apprenticeship</p><p class="job-description" data-i18n="bellBody">Four years building a foundation in software development, from programming and databases to enterprise applications.</p><div class="job-tags mono"><span>EFZ</span><span>SAP / ABAP</span><span data-i18n="webDevelopment">WEB DEVELOPMENT</span></div></div></article>
+ </div>
+ <div class="education-grid reveal"><article><span class="eyebrow mono">2023 — 2025</span><h3 data-i18n="bmsTitle">Technical vocational baccalaureate</h3><p>Berufsbildungszentrum BL</p></article><article><span class="eyebrow mono">2019 — 2023</span><h3 data-i18n="efzTitle">Application Developer EFZ</h3><p>Berufsbildungszentrum BL</p></article></div>
+</section>
+<section class="about section-shell section-space" id="about" aria-labelledby="about-title">
+ <div class="section-kicker mono reveal"><span>03 / <span data-i18n="navAbout">About</span></span><span class="kicker-rule"></span><span data-i18n="behindCode">BEHIND THE CODE</span></div>
+ <div class="about-layout"><div class="portrait-panel reveal"><div class="portrait-top mono"><span>JAN REIST</span><span>BASEL / CH</span></div><div class="portrait-monogram" aria-hidden="true">JR.</div><img src="assets/jan-reist.png" width="1000" height="1000" alt="Jan Reist" loading="lazy" decoding="async"><div class="portrait-bottom"><span class="mono" data-i18n="humanFirst">HUMAN FIRST. ENGINEER SECOND.</span><span aria-hidden="true">✳</span></div></div>
+ <div class="about-copy"><h2 id="about-title" class="reveal"><span data-i18n="aboutLine1">Curious by nature.</span><br><span class="muted" data-i18n="aboutLine2">Precise by choice.</span></h2><p class="about-description reveal" data-i18n="aboutBody">I like understanding why something works — and why it sometimes doesn't. I'll follow a problem through the interface, data and backend, then refine the details until the solution feels right.</p><div class="principles"><div class="principle reveal"><span class="mono">01</span><h3 data-i18n="principle1">Find the root cause.</h3></div><div class="principle reveal"><span class="mono">02</span><h3 data-i18n="principle2">Keep it purposeful.</h3></div><div class="principle reveal"><span class="mono">03</span><h3 data-i18n="principle3">Care about the details.</h3></div></div><div class="language-note reveal"><span class="mono" data-i18n="languages">LANGUAGES</span><p><span data-i18n="german">German</span><span class="language-separator">/</span><span data-i18n="english">English</span></p></div></div></div>
+</section>
+<section class="learning section-shell section-space" aria-labelledby="learning-title">
+ <div class="section-kicker mono reveal"><span>04 / <span data-i18n="learning">Learning</span></span><span class="kicker-rule"></span><span data-i18n="stayCurious">STAY CURIOUS</span></div>
+ <div class="section-heading reveal"><h2 id="learning-title"><span data-i18n="learningLine1">Never standing</span><br><span class="muted" data-i18n="learningLine2">still.</span></h2><p data-i18n="learningIntro">Selected certifications and continued learning.</p></div>
+ <div class="learning-list">
+ <details class="learning-item reveal"><summary><span class="learning-year mono">2026</span><span class="learning-topic"><span class="learning-name" data-i18n="aiLearning">AI agents & tooling</span><span class="learning-issuer">Anthropic</span></span><span class="learning-count mono" data-i18n="fiveCourses">5 COURSES</span><span class="details-plus" aria-hidden="true">+</span></summary><div class="learning-detail"><ul><li>Claude Code in Action <span data-i18n="june2026">June 2026</span></li><li>Introduction to Model Context Protocol <span data-i18n="june2026">June 2026</span></li><li>Introduction to subagents <span data-i18n="april2026">April 2026</span></li><li>Introduction to Claude Cowork <span data-i18n="april2026">April 2026</span></li><li>Introduction to agent skills <span data-i18n="april2026">April 2026</span></li></ul></div></details>
+ <details class="learning-item reveal"><summary><span class="learning-year mono">2025</span><span class="learning-topic"><span class="learning-name">First Certificate in English</span><span class="learning-issuer">Cambridge English</span></span><span class="learning-count mono">FCE</span><span class="details-plus" aria-hidden="true">+</span></summary><div class="learning-detail"><p data-i18n="fceDate">Issued February 2025.</p></div></details>
+ <details class="learning-item reveal"><summary><span class="learning-year mono">2024</span><span class="learning-topic"><span class="learning-name">Azure AI Fundamentals</span><span class="learning-issuer">Microsoft</span></span><span class="learning-count mono" data-i18n="certified">CERTIFICATION</span><span class="details-plus" aria-hidden="true">+</span></summary><div class="learning-detail"><p data-i18n="azureDate">Microsoft Certified: Azure AI Fundamentals. Issued August 2024.</p></div></details>
+ <details class="learning-item reveal"><summary><span class="learning-year mono">2022</span><span class="learning-topic"><span class="learning-name">SAP S/4HANA & ABAP</span><span class="learning-issuer">Technische Hochschule Brandenburg</span></span><span class="learning-count mono" data-i18n="threeCourses">3 COURSES</span><span class="details-plus" aria-hidden="true">+</span></summary><div class="learning-detail"><ul><li>Enterprise Resource Planning mit SAP S/4HANA (TS410)<span data-i18n="sept2022">September 2022</span></li><li>ABAP für Fortgeschrittene<span data-i18n="aug2022">August 2022</span></li><li>Einführung in ABAP<span data-i18n="july2022">July 2022</span></li></ul></div></details>
+ </div>
+ <a class="learning-link text-link reveal" href="https://www.linkedin.com/in/jan-reist/details/certifications/" target="_blank" rel="noopener noreferrer"><span data-i18n="viewCredentials">View credentials on LinkedIn</span><span aria-hidden="true">↗</span></a>
+</section>
+<section class="contact section-shell section-space" id="contact" aria-labelledby="contact-title">
+ <div class="section-kicker mono reveal"><span>05 / <span data-i18n="contact">Contact</span></span><span class="kicker-rule"></span><span data-i18n="connectKicker">LET'S CONNECT</span></div>
+ <h2 id="contact-title" class="reveal"><span data-i18n="contactLine1">Good software.</span><br><span class="contact-outline" data-i18n="contactLine2">Great conversations.</span></h2>
+ <div class="contact-bottom reveal"><p data-i18n="contactBody">Have an idea, a technical challenge, or just want to say hello? Let's talk.</p><div class="social-links"><a class="social-link magnetic" href="https://www.linkedin.com/in/jan-reist/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span aria-hidden="true">↗</span></a><a class="social-link magnetic" href="https://github.com/JJ4Dev" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a></div></div>
+ <a class="back-top mono" href="#top"><span data-i18n="backTop">Back to top</span><span aria-hidden="true">↑</span></a>
+</section>
 </main>
-
-<script src="script/translate.js"></script>
-<script src="script/scroll.js"></script>
-<script src="script/typewriter.js"></script>
-<script src="script/rocket.js"></script>
+<footer class="site-footer section-shell"><a class="wordmark" href="#top">reist<span>.dev</span><i></i></a><span class="mono">© 2026 Jan Reist</span><button id="motion-toggle" class="mono" type="button" aria-pressed="false"><span class="motion-indicator" aria-hidden="true">Ⅱ</span><span data-i18n="pause">Pause motion</span></button></footer>
 </body>
 </html>
