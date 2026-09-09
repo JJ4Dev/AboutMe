@@ -100,21 +100,21 @@ function draw() {
   if (!ctx || !size) return;
   ctx.clearRect(0, 0, size, size);
   const glow = ctx.createRadialGradient(size * .5, size * .5, 0, size * .5, size * .5, size * .47);
-  glow.addColorStop(0, 'rgba(158,235,77,.09)'); glow.addColorStop(1, 'rgba(158,235,77,0)');
+  glow.addColorStop(0, 'rgba(100,155,255,.09)'); glow.addColorStop(1, 'rgba(100,155,255,0)');
   ctx.fillStyle = glow; ctx.fillRect(0, 0, size, size);
   for (let i = 0; i < 72; i++) {
     const angle = i / 72 * Math.PI * 2, inner = size * (i % 6 ? .46 : .447), outer = size * .468;
-    ctx.strokeStyle = i % 6 ? '#273125' : '#657159'; ctx.lineWidth = 1; ctx.beginPath();
+    ctx.strokeStyle = i % 6 ? '#1c2b42' : '#61718a'; ctx.lineWidth = 1; ctx.beginPath();
     ctx.moveTo(size / 2 + Math.cos(angle) * inner, size / 2 + Math.sin(angle) * inner); ctx.lineTo(size / 2 + Math.cos(angle) * outer, size / 2 + Math.sin(angle) * outer); ctx.stroke();
   }
   for (let orbit = 0; orbit < 3; orbit++) {
-    ctx.beginPath(); ctx.strokeStyle = 'rgba(188,230,150,.15)'; ctx.lineWidth = .7;
+    ctx.beginPath(); ctx.strokeStyle = 'rgba(98,221,245,.15)'; ctx.lineWidth = .7;
     for (let n = 0; n <= 100; n++) { const angle = n / 100 * Math.PI * 2; const p = [Math.cos(angle) * 1.52, Math.sin(angle) * 1.52, 0]; if (orbit === 1) [p[1], p[2]] = [p[2], p[1]]; if (orbit === 2) [p[0], p[2]] = [p[2], p[0]]; const [x, y] = project(p); n ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.stroke();
   }
   const segments = mesh.map(([a, b]) => [project(a), project(b)]).sort((a, b) => a[0][2] + a[1][2] - b[0][2] - b[1][2]);
-  for (const [a, b] of segments) { const depth = (a[2] + b[2]) / 2; ctx.strokeStyle = `rgba(190,247,116,${.10 + (depth + 1.45) / 2.9 * .6})`; ctx.lineWidth = depth > .4 ? .9 : .6; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); }
+  for (const [a, b] of segments) { const depth = (a[2] + b[2]) / 2; ctx.strokeStyle = `rgba(100,155,255,${.10 + (depth + 1.45) / 2.9 * .6})`; ctx.lineWidth = depth > .4 ? .9 : .6; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); }
   const [x, y] = project([Math.cos(time * .4) * 1.52, Math.sin(time * .4) * 1.52, 0]);
-  ctx.shadowColor = '#c1fa70'; ctx.shadowBlur = 16; ctx.fillStyle = '#d3ff9d'; ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
+  ctx.shadowColor = '#649bff'; ctx.shadowBlur = 16; ctx.fillStyle = '#8ce5ff'; ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
 }
 function tick(now) {
   frame = 0;
