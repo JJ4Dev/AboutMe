@@ -22,7 +22,7 @@ This checks JavaScript syntax, copies the current site to `dist/`, and verifies 
 
 - English content: `index.html`; German translations and interactions: `script/portfolio.js`.
 - Styling: `style/portfolio.css`.
-- Portrait: reused from Jan's original AboutMe repository.
+- Portrait: supplied by Jan for this portfolio.
 - Space Grotesk and Manrope: self-hosted Google Fonts, distributed under the accompanying SIL Open Font Licenses in `assets/`.
 - Professional background: Jan's supplied public profile and general capabilities from his supplied reference. Company projects and private operational details are not included.
 
