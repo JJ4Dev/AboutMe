@@ -29,7 +29,10 @@ const translations = {
     sept2022: 'September 2022', aug2022: 'August 2022', july2022: 'Juli 2022', viewCredentials: 'Nachweise auf LinkedIn ansehen',
     contact: 'Kontakt', connectKicker: 'LASS UNS REDEN', contactLine1: 'Gute Software.', contactLine2: 'Gute Gespräche.',
     contactBody: 'Eine Idee, eine technische Herausforderung oder einfach Lust auf einen Austausch? Lass uns reden.', backTop: 'Nach oben',
-    description: 'Jan Reist — Software Engineer in der Region Basel. C#/.NET, Full-Stack-Anwendungen, Integrationen und durchdachte Weboberflächen.'
+    description: 'Jan Reist — Software Engineer in der Region Basel. C#/.NET, Full-Stack-Anwendungen, Integrationen und durchdachte Weboberflächen.',
+    architectureTitle: 'SOFTWARE, DIE VERBINDET.', architectureHint: 'Die Ebenen entdecken',
+    layerInterface: 'OBERFLÄCHE', layerServices: 'DIENSTE', layerData: 'DATEN & CLOUD',
+    layer0Caption: 'Oberflächen für Menschen.', layer1Caption: 'Logik, die Systeme verbindet.', layer2Caption: 'Daten, die Anwendungen antreiben.'
   }, en: {}
 };
 document.querySelectorAll('[data-i18n]').forEach(el => { translations.en[el.dataset.i18n] = el.textContent; });
@@ -38,6 +41,8 @@ translations.en.homeLabel = 'Jan Reist home';
 translations.en.navLabel = 'Main navigation';
 translations.en.languageLabel = 'Language';
 translations.en.description = document.querySelector('meta[name="description"]').content;
+translations.en.layer1Caption = 'Logic that connects systems.';
+translations.en.layer2Caption = 'Data that powers applications.';
 const storage = { get: key => { try { return localStorage.getItem(key); } catch { return null; } }, set: (key, value) => { try { localStorage.setItem(key, value); } catch {} } };
 let language = storage.get('reist-language') === 'de' ? 'de' : 'en';
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -73,71 +78,52 @@ document.querySelectorAll('[data-capability]').forEach(button => {
     document.querySelector('.system-index').textContent = `0${index + 1}—05`;
   });
 });
-const canvas = document.querySelector('#core-canvas');
-const ctx = canvas.getContext('2d');
-let size = 0, frame = 0, time = 0, last = 0, inView = true;
-const pointer = { x: 0, y: 0, targetX: 0, targetY: 0 };
-const mesh = [];
-function cubePoint(face, u, v) {
-  const p = face < 2 ? [face ? -1 : 1, u, v] : face < 4 ? [u, face === 3 ? -1 : 1, v] : [u, v, face === 5 ? -1 : 1];
-  const rounded = .48 + .52 / Math.hypot(...p);
-  return p.map(n => n * rounded);
+const architecture = document.querySelector('.architecture');
+const architectureStage = document.querySelector('.architecture-stage');
+const layerButtons = [...document.querySelectorAll('[data-layer]')];
+function selectLayer(index) {
+  architectureStage.dataset.step = String(index);
+  layerButtons.forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.layer) === index)));
+  const caption = document.querySelector('#architecture-caption [data-i18n]');
+  caption.dataset.i18n = `layer${index}Caption`;
+  caption.textContent = translate(caption.dataset.i18n);
+  document.querySelector('.caption-index').textContent = `0${index + 1} — 03`;
 }
-for (let face = 0; face < 6; face++) {
-  for (let a = 0; a <= 14; a++) for (let b = 0; b < 14; b++) {
-    const u = -1 + a / 7, v = -1 + b / 7, w = -1 + (b + 1) / 7;
-    mesh.push([cubePoint(face, u, v), cubePoint(face, u, w)], [cubePoint(face, v, u), cubePoint(face, w, u)]);
-  }
+layerButtons.forEach((button, index) => {
+  button.addEventListener('click', () => selectLayer(index));
+  button.addEventListener('keydown', event => {
+    const next = event.key === 'ArrowRight' || event.key === 'ArrowDown' ? (index + 1) % 3 : event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? (index + 2) % 3 : null;
+    if (next !== null) { event.preventDefault(); layerButtons[next].focus(); selectLayer(next); }
+  });
+});
+architectureStage.addEventListener('pointermove', event => {
+  if (paused || event.pointerType !== 'mouse') return;
+  const bounds = architectureStage.getBoundingClientRect();
+  architectureStage.style.setProperty('--pointer-x', `${((event.clientX - bounds.left) / bounds.width - .5) * 4}deg`);
+  architectureStage.style.setProperty('--pointer-y', `${((event.clientY - bounds.top) / bounds.height - .5) * -4}deg`);
+});
+architectureStage.addEventListener('pointerleave', () => {
+  architectureStage.style.setProperty('--pointer-x', '0deg');
+  architectureStage.style.setProperty('--pointer-y', '0deg');
+});
+let architectureVisible = true;
+function syncRequestMotion() {
+  const stopped = paused || !architectureVisible || document.hidden;
+  architecture.classList.toggle('flow-paused', stopped);
+  const paths = document.querySelector('.request-paths');
+  if (stopped) paths.pauseAnimations(); else paths.unpauseAnimations();
 }
-function project(p) {
-  const ry = time * .16 + .65 + pointer.x * .38, rx = .4 + Math.sin(time * .22) * .14 + pointer.y * .3;
-  const x = p[0] * Math.cos(ry) + p[2] * Math.sin(ry), z = -p[0] * Math.sin(ry) + p[2] * Math.cos(ry);
-  const y = p[1] * Math.cos(rx) - z * Math.sin(rx), depth = p[1] * Math.sin(rx) + z * Math.cos(rx);
-  const c = Math.cos(-.17), s = Math.sin(-.17), scale = size * .24 * 4.5 / (4.5 - depth);
-  return [size / 2 + (x * c - y * s) * scale, size / 2 + (x * s + y * c) * scale, depth];
-}
-function draw() {
-  if (!ctx || !size) return;
-  ctx.clearRect(0, 0, size, size);
-  const glow = ctx.createRadialGradient(size * .5, size * .5, 0, size * .5, size * .5, size * .47);
-  glow.addColorStop(0, 'rgba(100,155,255,.09)'); glow.addColorStop(1, 'rgba(100,155,255,0)');
-  ctx.fillStyle = glow; ctx.fillRect(0, 0, size, size);
-  for (let i = 0; i < 72; i++) {
-    const angle = i / 72 * Math.PI * 2, inner = size * (i % 6 ? .46 : .447), outer = size * .468;
-    ctx.strokeStyle = i % 6 ? '#1c2b42' : '#61718a'; ctx.lineWidth = 1; ctx.beginPath();
-    ctx.moveTo(size / 2 + Math.cos(angle) * inner, size / 2 + Math.sin(angle) * inner); ctx.lineTo(size / 2 + Math.cos(angle) * outer, size / 2 + Math.sin(angle) * outer); ctx.stroke();
-  }
-  for (let orbit = 0; orbit < 3; orbit++) {
-    ctx.beginPath(); ctx.strokeStyle = 'rgba(98,221,245,.15)'; ctx.lineWidth = .7;
-    for (let n = 0; n <= 100; n++) { const angle = n / 100 * Math.PI * 2; const p = [Math.cos(angle) * 1.52, Math.sin(angle) * 1.52, 0]; if (orbit === 1) [p[1], p[2]] = [p[2], p[1]]; if (orbit === 2) [p[0], p[2]] = [p[2], p[0]]; const [x, y] = project(p); n ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.stroke();
-  }
-  const segments = mesh.map(([a, b]) => [project(a), project(b)]).sort((a, b) => a[0][2] + a[1][2] - b[0][2] - b[1][2]);
-  for (const [a, b] of segments) { const depth = (a[2] + b[2]) / 2; ctx.strokeStyle = `rgba(100,155,255,${.10 + (depth + 1.45) / 2.9 * .6})`; ctx.lineWidth = depth > .4 ? .9 : .6; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); }
-  const [x, y] = project([Math.cos(time * .4) * 1.52, Math.sin(time * .4) * 1.52, 0]);
-  ctx.shadowColor = '#649bff'; ctx.shadowBlur = 16; ctx.fillStyle = '#8ce5ff'; ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
-}
-function tick(now) {
-  frame = 0;
-  if (paused || document.hidden || !inView) { last = 0; return; }
-  if (last) time += Math.min((now - last) / 1000, .05); last = now;
-  pointer.x += (pointer.targetX - pointer.x) * .04; pointer.y += (pointer.targetY - pointer.y) * .04;
-  draw(); frame = requestAnimationFrame(tick);
-}
-function schedule() { if (ctx && !frame && !paused && !document.hidden && inView) frame = requestAnimationFrame(tick); }
+new IntersectionObserver(entries => { architectureVisible = entries[0].isIntersecting; syncRequestMotion(); }).observe(architecture);
+document.addEventListener('visibilitychange', syncRequestMotion);
 function syncMotion() {
   document.documentElement.classList.toggle('motion-paused', paused);
   document.documentElement.classList.toggle('motion-enabled', !paused);
   document.querySelectorAll('.system-lines').forEach(svg => { if (paused) svg.pauseAnimations(); else svg.unpauseAnimations(); });
-  if (paused) { cancelAnimationFrame(frame); frame = 0; last = 0; draw(); } else schedule();
+  syncRequestMotion();
   updateMotionLabel();
 }
 motionButton.addEventListener('click', () => { paused = !paused; storage.set('reist-motion', paused ? 'paused' : 'playing'); syncMotion(); });
 reducedMotion.addEventListener('change', event => { const saved = storage.get('reist-motion'); paused = saved === 'paused' || (saved !== 'playing' && event.matches); syncMotion(); });
-document.addEventListener('visibilitychange', () => { if (document.hidden) { cancelAnimationFrame(frame); frame = 0; last = 0; } else schedule(); });
-new ResizeObserver(entries => { size = entries[0].contentRect.width; const dpi = Math.min(devicePixelRatio || 1, 2); canvas.width = Math.round(size * dpi); canvas.height = Math.round(size * dpi); if (ctx) ctx.setTransform(dpi, 0, 0, dpi, 0, 0); draw(); schedule(); }).observe(canvas);
-new IntersectionObserver(entries => { inView = entries[0].isIntersecting; if (!inView) { cancelAnimationFrame(frame); frame = 0; last = 0; } else schedule(); }).observe(canvas);
-canvas.addEventListener('pointermove', event => { if (paused || event.pointerType !== 'mouse') return; const bounds = canvas.getBoundingClientRect(); pointer.targetX = (event.clientX - bounds.left) / bounds.width * 2 - 1; pointer.targetY = (event.clientY - bounds.top) / bounds.height * 2 - 1; });
-canvas.addEventListener('pointerleave', () => { pointer.targetX = pointer.targetY = 0; });
 let scrollFrame = 0;
 function updateScroll() { scrollFrame = 0; const max = document.documentElement.scrollHeight - innerHeight; document.querySelector('.scroll-progress').style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`; }
 addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScroll); }, { passive: true });

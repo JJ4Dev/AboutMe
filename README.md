@@ -1,6 +1,6 @@
 # Jan Reist — reist.dev
 
-An English/German portfolio built with HTML, CSS and JavaScript. The animated canvas hero, expertise diagram, scroll entrances and hover interactions share a persistent motion preference and respect reduced motion by default.
+An English/German portfolio built with HTML, CSS and JavaScript. The interactive architecture hero, expertise diagram, scroll entrances and hover interactions share a persistent motion preference and respect reduced motion by default. The hero connects Blazor, .NET services and SQL/Azure through an animated request path.
 
 ## Development
 

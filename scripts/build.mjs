@@ -1,7 +1,8 @@
-import {mkdir,copyFile,cp,readFile,writeFile} from 'node:fs/promises';
+import {mkdir,copyFile,readFile,writeFile} from 'node:fs/promises';
 await mkdir('dist',{recursive:true});
 for(const file of ['index.html','favicon.svg','_headers'])await copyFile(file,`dist/${file}`);
-await cp('assets','dist/assets',{recursive:true});
+await mkdir('dist/assets',{recursive:true});
+for(const file of ['jan-reist.png','manrope.ttf','space-grotesk.ttf','manrope-OFL.txt','space-grotesk-OFL.txt','favicon-blue.svg'])await copyFile(`assets/${file}`,`dist/assets/${file}`);
 for(const dir of ['script','style'])await mkdir(`dist/${dir}`,{recursive:true});
 await copyFile('script/portfolio.js','dist/script/portfolio.js');
 await copyFile('style/portfolio.css','dist/style/portfolio.css');
