@@ -1,0 +1,1 @@
+{"name":"jan-reist-portfolio","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"node scripts/dev.mjs","build":"node --check script/portfolio.js && node scripts/build.mjs"}}
