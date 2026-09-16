@@ -108,3 +108,5 @@ fabric.properties
 
 node_modules/
 dist/
+script/architecture-3d.bundle.js
+assets/three-LICENSE.txt
