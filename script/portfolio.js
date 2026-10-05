@@ -110,12 +110,13 @@ document.querySelectorAll('[data-language]').forEach(el => el.addEventListener('
 const nodeNames = ['services', 'interface', 'cloud', 'data', 'ai'];
 document.querySelectorAll('[data-capability]').forEach(button => {
   button.addEventListener('click', () => {
-    document.querySelectorAll('[data-capability]').forEach(el => { const active = el === button; el.closest('.capability').classList.toggle('active', active); el.setAttribute('aria-expanded', String(active)); el.setAttribute('aria-disabled', String(active)); });
+    const opening = button.getAttribute('aria-expanded') !== 'true';
+    document.querySelectorAll('[data-capability]').forEach(el => { const active = opening && el === button; el.closest('.capability').classList.toggle('active', active); el.setAttribute('aria-expanded', String(active)); });
     const index = Number(button.dataset.capability);
-    document.querySelectorAll('.system-node').forEach(el => el.classList.toggle('is-selected', el.classList.contains(`node-${nodeNames[index]}`)));
+    document.querySelectorAll('.system-node').forEach(el => el.classList.toggle('is-selected', opening && el.classList.contains(`node-${nodeNames[index]}`)));
     const label = document.querySelector('.system-detail');
-    label.dataset.i18n = `cap${index}Title`; label.textContent = translate(label.dataset.i18n);
-    document.querySelector('.system-index').textContent = `0${index + 1}—05`;
+    label.dataset.i18n = opening ? `cap${index}Title` : 'connectedSystem'; label.textContent = translate(label.dataset.i18n);
+    document.querySelector('.system-index').textContent = opening ? `0${index + 1}—05` : '— / 05';
   });
 });
 const architecture = document.querySelector('.architecture');
@@ -366,6 +367,5 @@ document.querySelectorAll('.portrait-panel,.system-visual,.lab-window').forEach(
     panel.style.setProperty('--light-x',`${event.clientX-bounds.left}px`);panel.style.setProperty('--light-y',`${event.clientY-bounds.top}px`);
   });
 });
-document.querySelector('[data-capability="0"]').setAttribute('aria-disabled', 'true');
 setLanguage(language); syncMotion(); updateScroll();
 document.documentElement.classList.add('js');
