@@ -49,7 +49,8 @@ export async function createConnections(host, layers, onFailure) {
       const board=boards[i],size=`${bw}:${bh}`;
       if(board.key!==size){board.mesh?.geometry.dispose();if(board.mesh)board.group.remove(board.mesh);board.mesh=new Mesh(geometry(bw,bh),[face,edge]);board.group.add(board.mesh);board.key=size;}
       board.group.position.set(left+bw/2-w/2,h/2-top-bh/2,i*90);
-      board.group.rotation.set((9+py)*Math.PI/180,(-12+px)*Math.PI/180,[6,-5,5][i]*Math.PI/180);board.group.updateMatrixWorld(true);
+      const angle=-parseFloat(getComputedStyle(layers[i]).getPropertyValue('--layer-angle'));
+      board.group.rotation.set((9+py)*Math.PI/180,(-12+px)*Math.PI/180,angle*Math.PI/180);board.group.updateMatrixWorld(true);
       const m=board.group.matrixWorld.elements;
       layers[i].style.setProperty('--surface-transform',`matrix(${m[0]},${-m[1]},${-m[4]},${m[5]},0,0)`);
       return new Vector3((i===1?-1:1)*(bw/2+5),-bh*.20,0).applyMatrix4(board.group.matrixWorld);

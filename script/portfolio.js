@@ -124,23 +124,8 @@ const layerButtons = [...document.querySelectorAll('[data-layer]')];
 const threeToggle = document.querySelector('.three-toggle');
 const threeStatus = document.querySelector('#three-status');
 let connections = null, poseTimer = 0, targetPose = [0,0];
-let requestJob = null, manualSpread = false;
-const layerToggle = document.querySelector('.layer-toggle');
-function setSpread(value) {
-  if (architectureStage.style.getPropertyValue('--spread') === String(value)) return;
-  architectureStage.style.setProperty('--spread', value);
-  const expanded = value > .5;
-  layerToggle.setAttribute('aria-pressed', String(expanded));
-  setText(layerToggle.querySelector('[data-i18n]'), expanded ? 'combineLayers' : 'separateLayers');
-  updateRequestPaths();
-  connections?.refresh();
-}
+let requestJob = null;
 function setText(element, key) { element.dataset.i18n = key; element.textContent = translate(key); }
-layerToggle.addEventListener('click', () => {
-  manualSpread = true;
-  setSpread(layerToggle.getAttribute('aria-pressed') === 'true' ? 0 : 1);
-  connections?.pulse();
-});
 function showSimpleView(failed = false) {
   connections?.dispose(); connections = null;
   architecture.classList.remove('three-active');
@@ -224,14 +209,9 @@ let scrollFrame = 0;
 function updateScroll() {
   scrollFrame = 0; const max = document.documentElement.scrollHeight - innerHeight;
   document.querySelector('.scroll-progress').style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
-  if (!paused && !manualSpread && architectureVisible) {
-    const top = architectureStage.getBoundingClientRect().top;
-    setSpread(Math.max(0, Math.min(1, (innerHeight * .55 - top) / (innerHeight * .4))));
-  }
-  updateRequestPaths();
 }
 addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScroll); }, { passive: true });
-addEventListener('resize', updateScroll);
+addEventListener('resize', () => { updateScroll(); updateRequestPaths(); connections?.refresh(); });
 const revealObserver = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); } }); }, { threshold: .08 });
 document.querySelectorAll('.section-heading,.capability,.engineering-decisions article,.lab-window').forEach((element,index) => {
   element.classList.add('reveal');element.style.setProperty('--reveal-delay',`${index % 3 * 65}ms`);
@@ -261,9 +241,10 @@ function requestPath(from, to) {
 }
 function updateRequestPaths() {
   let cursor = 18;
-  const gap = 10 + Number(architectureStage.style.getPropertyValue('--spread') || 0) * 14;
+  const gap = 20;
   layerButtons.forEach(layer => {
-    const extent = layer.offsetHeight + layer.offsetWidth * .11;
+    const angle = Math.abs(parseFloat(getComputedStyle(layer).getPropertyValue('--layer-angle'))) * Math.PI / 180;
+    const extent = layer.offsetHeight * Math.cos(angle) + layer.offsetWidth * Math.sin(angle);
     layer.style.top = `${Math.round(cursor + (extent - layer.offsetHeight) / 2)}px`;
     cursor += extent + gap;
   });
@@ -330,7 +311,6 @@ function runRequest(query, offline, origin) {
   delete document.querySelector('.lab-window').dataset.result;
   document.querySelector('.hero-result').textContent = '…';
   if (origin === 'hero') {
-    manualSpread = true; setSpread(1);
     architecture.classList.add('request-running');
     document.querySelector('.request-paths').setCurrentTime(0);
   }
