@@ -81,6 +81,7 @@ Object.assign(translations.en, {
 });
 const storage = { get: key => { try { return localStorage.getItem(key); } catch { return null; } }, set: (key, value) => { try { localStorage.setItem(key, value); } catch {} } };
 let language = storage.get('reist-language') === 'de' ? 'de' : 'en';
+let lastResult = null;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const savedMotion = storage.get('reist-motion');
 let paused = savedMotion === 'paused' || (savedMotion !== 'playing' && reducedMotion.matches);
@@ -101,8 +102,9 @@ function setLanguage(next) {
   document.querySelectorAll('[data-language]').forEach(el => { el.classList.toggle('active', el.dataset.language === next); el.setAttribute('aria-pressed', String(el.dataset.language === next)); });
   updateMotionLabel();
   storage.set('reist-language', next);
-  connections?.refresh();
   updateRequestPaths();
+  connections?.refresh();
+  if(lastResult) renderHeroResult();
 }
 document.querySelectorAll('[data-language]').forEach(el => el.addEventListener('click', () => setLanguage(el.dataset.language)));
 const nodeNames = ['services', 'interface', 'cloud', 'data', 'ai'];
@@ -121,16 +123,17 @@ const architectureStage = document.querySelector('.architecture-stage');
 const layerButtons = [...document.querySelectorAll('[data-layer]')];
 const threeToggle = document.querySelector('.three-toggle');
 const threeStatus = document.querySelector('#three-status');
-let connections = null;
+let connections = null, poseTimer = 0, targetPose = [0,0];
 let requestJob = null, manualSpread = false;
 const layerToggle = document.querySelector('.layer-toggle');
 function setSpread(value) {
+  if (architectureStage.style.getPropertyValue('--spread') === String(value)) return;
   architectureStage.style.setProperty('--spread', value);
   const expanded = value > .5;
   layerToggle.setAttribute('aria-pressed', String(expanded));
   setText(layerToggle.querySelector('[data-i18n]'), expanded ? 'combineLayers' : 'separateLayers');
-  connections?.refresh();
   updateRequestPaths();
+  connections?.refresh();
 }
 function setText(element, key) { element.dataset.i18n = key; element.textContent = translate(key); }
 layerToggle.addEventListener('click', () => {
@@ -189,10 +192,13 @@ architectureStage.addEventListener('pointermove', event => {
   const bounds = architectureStage.getBoundingClientRect();
   architectureStage.style.setProperty('--pointer-x', `${((event.clientX - bounds.left) / bounds.width - .5) * 4}deg`);
   architectureStage.style.setProperty('--pointer-y', `${((event.clientY - bounds.top) / bounds.height - .5) * -4}deg`);
+  targetPose = [(event.clientX - bounds.left) / bounds.width * 4 - 2,(event.clientY - bounds.top) / bounds.height * -4 + 2];
+  if (connections && !poseTimer) poseTimer = setTimeout(() => { poseTimer = 0; if(!paused) connections?.orient(...targetPose); },34);
 });
 architectureStage.addEventListener('pointerleave', () => {
   architectureStage.style.setProperty('--pointer-x', '0deg');
   architectureStage.style.setProperty('--pointer-y', '0deg');
+  clearTimeout(poseTimer);poseTimer=0;connections?.orient(0,0);
 });
 let architectureVisible = true;
 function syncRequestMotion() {
@@ -227,6 +233,9 @@ function updateScroll() {
 addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScroll); }, { passive: true });
 addEventListener('resize', updateScroll);
 const revealObserver = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); } }); }, { threshold: .08 });
+document.querySelectorAll('.section-heading,.capability,.engineering-decisions article,.lab-window').forEach((element,index) => {
+  element.classList.add('reveal');element.style.setProperty('--reveal-delay',`${index % 3 * 65}ms`);
+});
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 document.querySelectorAll('.magnetic').forEach(el => {
   el.addEventListener('pointermove', event => { if (paused || event.pointerType !== 'mouse') return; const rect = el.getBoundingClientRect(); el.style.transform = `translate(${(event.clientX - rect.left - rect.width / 2) * .07}px, ${(event.clientY - rect.top - rect.height / 2) * .12}px)`; });
@@ -237,6 +246,10 @@ const requestButtons = [document.querySelector('#hero-request'), document.queryS
 const heroStatus = document.querySelector('.hero-request-status');
 const responseSummary = document.querySelector('#response-summary');
 const traceList = document.querySelector('#request-trace');
+function renderHeroResult() {
+  const plan=lastResult;
+  document.querySelector('.hero-result').textContent=plan.status===200 ? `200 OK · ${plan.body.count} ${language==='de'?'Treffer':plan.body.count===1?'match':'matches'}` : `${plan.status} ${plan.label}`;
+}
 function requestPath(from, to) {
   const a = layerButtons[from], b = layerButtons[to], route = Math.min(from, to);
   const x1 = a.offsetLeft + a.offsetWidth * (from === 1 ? .02 : .94);
@@ -247,11 +260,21 @@ function requestPath(from, to) {
   return `M${x1} ${y1} C${rail} ${y1},${rail} ${y2},${x2} ${y2}`;
 }
 function updateRequestPaths() {
+  let cursor = 18;
+  const gap = 10 + Number(architectureStage.style.getPropertyValue('--spread') || 0) * 14;
+  layerButtons.forEach(layer => {
+    const extent = layer.offsetHeight + layer.offsetWidth * .11;
+    layer.style.top = `${Math.round(cursor + (extent - layer.offsetHeight) / 2)}px`;
+    cursor += extent + gap;
+  });
+  const stageHeight = `${Math.ceil(cursor - gap + 18)}px`;
+  if (architectureStage.style.height !== stageHeight) architectureStage.style.height = stageHeight;
   const svg = document.querySelector('.request-paths');
   svg.setAttribute('viewBox', `0 0 ${architectureStage.clientWidth} ${architectureStage.clientHeight}`);
   svg.querySelectorAll('.request-track').forEach((path, index) => path.setAttribute('d', requestPath(index, index + 1)));
 }
-new ResizeObserver(updateRequestPaths).observe(architectureStage);
+const pathResize = new ResizeObserver(() => { updateRequestPaths(); connections?.refresh(); });
+pathResize.observe(architectureStage); layerButtons.forEach(layer => pathResize.observe(layer));
 function showTrace(plan, index) {
   traceList.replaceChildren(...plan.trace.slice(0, index + 1).map((step, i) => {
     const item = document.createElement('li'); setText(item, step.key);
@@ -266,6 +289,8 @@ function finishRequest() {
   showTrace(plan, plan.trace.length - 1);
   document.querySelector('#response-body').textContent = JSON.stringify(plan.body, null, 2);
   const code = document.querySelector('#response-code'); code.textContent = `${plan.status} ${plan.label}`; code.dataset.status = plan.status;
+  document.querySelector('.lab-window').dataset.result = String(plan.status);
+  lastResult=plan;renderHeroResult();
   const key = plan.status === 200 ? 'responseSuccess' : plan.status === 400 ? 'responseInvalid' : 'responseUnavailable';
   setText(responseSummary, key); setText(heroStatus, key);
   requestButtons.forEach(button => { button.disabled = false; });
@@ -299,8 +324,11 @@ function runRequest(query, offline, origin) {
   requestButtons.forEach(button => { button.disabled = true; });
   document.querySelector('#request-form').setAttribute('aria-busy', 'true');
   document.querySelector('#response-code').textContent = '…';
+  delete document.querySelector('#response-code').dataset.status;
   document.querySelector('#response-body').textContent = '{ }';
   setText(responseSummary, 'requestRunning');
+  delete document.querySelector('.lab-window').dataset.result;
+  document.querySelector('.hero-result').textContent = '…';
   if (origin === 'hero') {
     manualSpread = true; setSpread(1);
     architecture.classList.add('request-running');
@@ -342,6 +370,22 @@ const ambientObserver = new IntersectionObserver(entries => {
 });
 document.querySelectorAll('.hero-copy,.stack-ribbon,.system-visual').forEach(element => ambientObserver.observe(element));
 document.addEventListener('visibilitychange', syncAmbientMotion);
+
+const sectionObserver = new IntersectionObserver(entries => {
+  const current = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
+  if (!current) return;
+  document.querySelectorAll('.site-header nav a').forEach(link => {
+    if(link.hash === `#${current.target.id}`) link.setAttribute('aria-current','location'); else link.removeAttribute('aria-current');
+  });
+}, {rootMargin:'-15% 0px -45% 0px',threshold:[0,.1,.4]});
+document.querySelectorAll('main>section[id]').forEach(section => sectionObserver.observe(section));
+document.querySelectorAll('.portrait-panel,.system-visual,.lab-window').forEach(panel => {
+  panel.addEventListener('pointermove',event => {
+    if(paused || event.pointerType !== 'mouse') return;
+    const bounds=panel.getBoundingClientRect();
+    panel.style.setProperty('--light-x',`${event.clientX-bounds.left}px`);panel.style.setProperty('--light-y',`${event.clientY-bounds.top}px`);
+  });
+});
 document.querySelector('[data-capability="0"]').setAttribute('aria-disabled', 'true');
 setLanguage(language); syncMotion(); updateScroll();
 document.documentElement.classList.add('js');
