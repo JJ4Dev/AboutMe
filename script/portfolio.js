@@ -1,37 +1,38 @@
 import { planRequest } from './request-demo.js';
 const translations = {
   de: {
+    aboutAside:'In Basel zuhause. Ich arbeite an Anwendungen, Oberflächen und Integrationen.',
     skip: 'Zum Inhalt springen', navExpertise: 'Kompetenzen', navJourney: 'Werdegang', navAbout: 'Über mich', navContact: 'Kontakt',
-    roleLocation: 'Software Engineer · Basel, Schweiz', heroLine1: 'Durchdachte Oberflächen.', heroLine2: 'Starke Grundlagen.',
-    heroBody: 'Ich bin Jan. Ich entwickle Full-Stack-Software mit C# und .NET und verbinde die Systeme im Hintergrund mit dem Erlebnis auf dem Bildschirm.',
-    explore: 'Meine Kompetenzen entdecken', scroll: 'Scrollen und entdecken', bigPicture: 'DAS GROSSE GANZE',
-    expertiseLine1: 'Von der Oberfläche', expertiseLine2: 'bis zur Infrastruktur.', expertiseIntro: 'Was ich gerne miteinander verbinde.',
-    cap0Title: 'Backend & Integrationen', cap0Body: 'Dienste, die Anwendungen, Daten und Geschäftsprozesse verbinden.',
-    cap1Title: 'Weboberflächen', cap1Body: 'Responsive Oberflächen, wiederverwendbare Komponenten und durchdachte Interaktionen.',
-    cap2Title: 'Daten & Cloud', cap2Body: 'Datenflüsse und Echtzeitfunktionen, die Anwendungen miteinander verbinden.',
-    cap3Title: 'Modernisierung', cap3Body: 'Das bestehende System verstehen. Dem Problem auf den Grund gehen. Die nächste Version gezielt entwickeln.',
+    roleLocation: 'Software Engineer · Basel, Schweiz', heroLine1: "C# & .NET.", heroLine2: "Von der UI zur API.",
+    heroBody: "Ich bin Software Engineer in Basel. Ich arbeite an .NET-Anwendungen, Blazor-Oberflächen und den Integrationen zwischen Systemen.",
+    explore: "Womit ich arbeite", scroll: 'Scrollen und entdecken', bigPicture: 'DAS GROSSE GANZE',
+    expertiseLine1: "Woran ich", expertiseLine2: "arbeite.", expertiseIntro: "Mein täglicher Stack und die Bereiche, in denen ich dazulerne.",
+    cap0Title: 'Backend & Integrationen', cap0Body: "Ich arbeite an C#/.NET-Diensten und Integrationen, auch mit bestehenden SOAP- und WCF-Systemen.",
+    cap1Title: 'Weboberflächen', cap1Body: "Ich entwickle Oberflächen mit Blazor und JavaScript, mit wiederverwendbaren Komponenten und responsiven Layouts.",
+    cap2Title: 'Daten & Cloud', cap2Body: "SQL Server für Anwendungsdaten, Azure für Cloud-Dienste und SignalR für Echtzeit-Updates.",
+    cap3Title: 'Modernisierung', cap3Body: "Ich verfolge Fehler durch bestehenden Code und Datenflüsse und arbeite an Migrationen und Anwendungsupdates.",
     modernTags: 'BESTEHENDE SYSTEME / MIGRATION / DEBUGGING', cap4Title: 'KI in Anwendungen',
-    cap4Body: 'Agenten und Tools in Software einbinden, mit Blick auf Berechtigungen und Evaluation.', aiTags: 'AZURE OPENAI / AGENTEN / TOOL-INTEGRATION',
+    cap4Body: "Ich beschäftige mich damit, wie Agenten und Tools in Anwendungen passen, auch mit Berechtigungen und Evaluation.", aiTags: 'AZURE OPENAI / AGENTEN / TOOL-INTEGRATION',
     connectedSystem: 'EIN VERBUNDENES SYSTEM', pause: 'Animationen pausieren', resume: 'Animationen fortsetzen',
     homeLabel: 'Jan Reist Startseite', navLabel: 'Hauptnavigation', languageLabel: 'Sprache',
-    inProgress: 'IMMER IN BEWEGUNG', journeyLine1: 'Immer weiterlernen.', journeyLine2: 'Immer weiterentwickeln.',
-    journeyIntro: 'Eine Grundlage in der Applikationsentwicklung. Eine Neugier, die weiter wächst.', microDates: '2023 — HEUTE',
+    inProgress: 'IMMER IN BEWEGUNG', journeyLine1: "Mein Weg", journeyLine2: "bis hierher.",
+    journeyIntro: "Von der Berufslehre in der Applikationsentwicklung zur Arbeit mit .NET.", microDates: '2023 — HEUTE',
     currentChapter: 'DAS AKTUELLE KAPITEL', microBody: 'Vom Junior Developer zum Software Engineer. Ich arbeite an .NET-Anwendungen, Integrationen und den Oberflächen, die alles zusammenbringen.',
     integrations: 'INTEGRATIONEN', foundation: 'DIE GRUNDLAGE', bellRole: 'Berufslehre Applikationsentwicklung',
     bellBody: 'Vier Jahre als Grundlage für die Softwareentwicklung: von Programmierung und Datenbanken bis zu Unternehmensanwendungen.', webDevelopment: 'WEBENTWICKLUNG',
     bmsTitle: 'Technische Berufsmaturität', efzTitle: 'Informatiker Applikationsentwicklung EFZ', behindCode: 'HINTER DEM CODE',
-    humanFirst: 'MENSCH. MIT EINER LEIDENSCHAFT FÜR CODE.', aboutLine1: 'Von Natur aus neugierig.', aboutLine2: 'Ganz bewusst präzise.',
-    aboutBody: 'Ich möchte verstehen, warum etwas funktioniert – und warum manchmal nicht. Ich gehe einem Problem durch Oberfläche, Daten und Backend auf den Grund. Danach feile ich an den Details, bis sich die Lösung stimmig anfühlt.',
+    humanFirst: 'MENSCH. MIT EINER LEIDENSCHAFT FÜR CODE.', aboutLine1: "Ich möchte wissen,", aboutLine2: "warum es funktioniert.",
+    aboutBody: "Wenn etwas nicht funktioniert, möchte ich verstehen, wo und warum. Ich verfolge das Problem durch die Oberfläche, das Backend und die Daten und arbeite dann an der Ursache. Mir sind die kleinen Details wichtig, aber auch, die Arbeit fertigzubringen.",
     principle1: 'Die Ursache finden.', principle2: 'Das Ziel im Blick behalten.', principle3: 'Auf die Details achten.',
     languages: 'SPRACHEN', german: 'Deutsch', english: 'Englisch', learning: 'Weiterbildung', stayCurious: 'NEUGIERIG BLEIBEN',
-    learningLine1: 'Immer einen', learningLine2: 'Schritt weiter.', learningIntro: 'Ausgewählte Zertifikate und Weiterbildungen.', aiLearning: 'KI-Agenten & Tools',
-    fiveCourses: '5 KURSE', threeCourses: '3 KURSE', certified: 'ZERTIFIKAT', june2026: 'Juni 2026', april2026: 'April 2026',
+    learningLine1: "Kurse &", learningLine2: "Zertifikate.", learningIntro: "Was ich neben der täglichen Arbeit dazulerne.", aiLearning: 'KI-Agenten & Tools',
+    fiveCourses: '5 KURSE', certified: 'ZERTIFIKAT', june2026: 'Juni 2026', april2026: 'April 2026',
     fceDate: 'Ausgestellt im Februar 2025.', azureDate: 'Microsoft Certified: Azure AI Fundamentals. Ausgestellt im August 2024.',
-    sept2022: 'September 2022', aug2022: 'August 2022', july2022: 'Juli 2022', viewCredentials: 'Nachweise auf LinkedIn ansehen',
-    contact: 'Kontakt', connectKicker: 'LASS UNS REDEN', contactLine1: 'Gute Software.', contactLine2: 'Gute Gespräche.',
-    contactBody: 'Eine Idee, eine technische Herausforderung oder einfach Lust auf einen Austausch? Lass uns reden.', backTop: 'Nach oben',
+    viewCredentials: 'Nachweise auf LinkedIn ansehen',
+    contact: 'Kontakt', connectKicker: 'LASS UNS REDEN', contactLine1: "Eine Idee", contactLine2: "im Kopf?",
+    contactBody: "Du findest mich auf LinkedIn. Meinen Code kannst du dir auf GitHub ansehen.", backTop: 'Nach oben',
     description: 'Jan Reist — Software Engineer in der Region Basel. C#/.NET, Full-Stack-Anwendungen, Integrationen und durchdachte Weboberflächen.',
-    architectureTitle: 'EIN BLICK IN DIE ANWENDUNG.', architectureHint: 'Die Ebenen entdecken',
+    architectureTitle: "DIE ANWENDUNGSEBENEN", architectureHint: 'Die Ebenen entdecken',
     layerInterface: 'OBERFLÄCHE', layerServices: 'DIENSTE', layerData: 'DATEN & CLOUD',
     layer0Caption: 'Oberflächen für Menschen.', layer1Caption: 'Logik, die Systeme verbindet.', layer2Caption: 'Daten, die Anwendungen antreiben.',
     enable3d: '3D aktivieren', disable3d: 'Einfache Ansicht', loading3d: '3D wird geladen…',
@@ -40,17 +41,17 @@ const translations = {
     layer0Detail:'Mit einer klaren Aktion beginnen. Fortschritt anzeigen, Ergebnisse liefern und Fehler verständlich machen.',
     layer1Detail:'Eingaben prüfen, Abläufe koordinieren und klar definierte Antworten liefern.',
     layer2Detail:'Nur die benötigten Daten lesen. Wenn eine Abhängigkeit ausfällt, muss die Anwendung damit umgehen können.',
-    heroDemoReady:'Eine Browser-Simulation. Folge der Anfrage durch die Ebenen.', openLab:'Eingaben testen & Code ansehen',
-    demoKicker:'INTERAKTIVE DEMO', demoKind:'ÖFFENTLICH NACHVOLLZIEHBAR', labLine1:'Eine Anfrage.', labLine2:'Jede Entscheidung.',
-    labIntro:'Teste den Erfolgsfall. Und dann die Fehlerfälle.', localSimulation:'Browser-Simulation · keine Serveraufrufe',
+    heroDemoReady:'Eine Browser-Simulation. Folge der Anfrage durch die Ebenen.', openLab:"Zum Anfrageformular",
+    demoKicker:'INTERAKTIVE DEMO', demoKind:'ÖFFENTLICH NACHVOLLZIEHBAR', labLine1:"Einer Anfrage", labLine2:"folgen.",
+    labIntro:"Teste eine Eingabe und schau dir die Antwort und den Ablauf dahinter an.", localSimulation:'Browser-Simulation · keine Serveraufrufe',
     requestLabel:'ANFRAGE', queryLabel:'Meine Kompetenzen durchsuchen', queryHint:'Teste .NET, Blazor oder Azure. Leere das Feld, um die Validierung zu prüfen.',
     offlineOption:'Die Datenquelle nicht verfügbar machen', responseLabel:'ANTWORT', responseReady:'Das Ergebnis erscheint hier.',
-    simulationNote:'Diese JavaScript-Demo bildet einen Ablauf von Oberfläche über Dienste bis zu Daten mit meinen öffentlichen Kompetenzen ab. Die Ebenen oben stehen für meinen .NET-Stack.',
+    simulationNote:"Die Demo läuft im Browser mit meinen öffentlichen Kompetenzen. Die Architekturansicht zeigt meinen .NET-Stack; diese Seite und die Anfragelogik verwenden JavaScript.",
     inspectSource:'Die ausgeführte Logik ansehen', viewSource:'Quellcode auf GitHub ansehen', sourceLoading:'Quellcode wird geladen…', sourceFailed:'Der Quellcode konnte nicht geladen werden. Nutze den GitHub-Link.',
     decisionProblem:'DAS PROBLEM', decisionApproach:'DER ANSATZ', decisionTradeoff:'DIE ABWÄGUNG',
-    decision1Title:'Das Unsichtbare sichtbar machen.', decision1Body:'Ein Ergebnis allein zeigt die Arbeit dahinter nicht. Die Ablaufspur zeigt, wo Eingaben geprüft, Daten gelesen und Antworten erstellt werden.',
-    decision2Title:'Logik getrennt halten.', decision2Body:'Dieselbe Anfragefunktion steuert beide Demos. Darstellung und Animation zeigen ihr Ergebnis; sie entscheiden nicht über den Erfolg der Anfrage.',
-    decision3Title:'Ressourcen bewusst einsetzen.', decision3Body:'Die Demo läuft lokal, 3D wird nur auf Wunsch geladen. So bleibt sie ohne Backend oder leistungsstarken Grafikchip nutzbar.',
+    decision1Title:"Die Schritte zeigen.", decision1Body:'Ein Ergebnis allein zeigt die Arbeit dahinter nicht. Die Ablaufspur zeigt, wo Eingaben geprüft, Daten gelesen und Antworten erstellt werden.',
+    decision2Title:"Die Logik getrennt halten.", decision2Body:'Dieselbe Anfragefunktion steuert beide Demos. Darstellung und Animation zeigen ihr Ergebnis; sie entscheiden nicht über den Erfolg der Anfrage.',
+    decision3Title:"Nur bei Bedarf laden.", decision3Body:'Die Demo läuft lokal, 3D wird nur auf Wunsch geladen. So bleibt sie ohne Backend oder leistungsstarken Grafikchip nutzbar.',
     traceLabel:'Ablauf der Anfrage', traceReady:'Warte auf deine erste Anfrage.', traceInput:'Oberfläche → Eingabe erfassen', traceValidate:'Dienst → Eingabe validieren',
     traceQuery:'Daten → Kompetenzen durchsuchen', traceSerialize:'Dienst → Antwort erstellen', traceSuccess:'Oberfläche → Ergebnis anzeigen',
     traceInvalid:'Oberfläche → Validierungsfehler anzeigen', traceUnavailable:'Dienst → Ausfall abfangen', traceError:'Oberfläche → Fehler verständlich anzeigen',
@@ -81,6 +82,7 @@ Object.assign(translations.en, {
 });
 const storage = { get: key => { try { return localStorage.getItem(key); } catch { return null; } }, set: (key, value) => { try { localStorage.setItem(key, value); } catch {} } };
 let language = storage.get('reist-language') === 'de' ? 'de' : 'en';
+let lastResult = null;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const savedMotion = storage.get('reist-motion');
 let paused = savedMotion === 'paused' || (savedMotion !== 'playing' && reducedMotion.matches);
@@ -101,19 +103,21 @@ function setLanguage(next) {
   document.querySelectorAll('[data-language]').forEach(el => { el.classList.toggle('active', el.dataset.language === next); el.setAttribute('aria-pressed', String(el.dataset.language === next)); });
   updateMotionLabel();
   storage.set('reist-language', next);
-  connections?.refresh();
   updateRequestPaths();
+  connections?.refresh();
+  if(lastResult) renderHeroResult();
 }
 document.querySelectorAll('[data-language]').forEach(el => el.addEventListener('click', () => setLanguage(el.dataset.language)));
 const nodeNames = ['services', 'interface', 'cloud', 'data', 'ai'];
 document.querySelectorAll('[data-capability]').forEach(button => {
   button.addEventListener('click', () => {
-    document.querySelectorAll('[data-capability]').forEach(el => { const active = el === button; el.closest('.capability').classList.toggle('active', active); el.setAttribute('aria-expanded', String(active)); el.setAttribute('aria-disabled', String(active)); });
+    const opening = button.getAttribute('aria-expanded') !== 'true';
+    document.querySelectorAll('[data-capability]').forEach(el => { const active = opening && el === button; el.closest('.capability').classList.toggle('active', active); el.setAttribute('aria-expanded', String(active)); });
     const index = Number(button.dataset.capability);
-    document.querySelectorAll('.system-node').forEach(el => el.classList.toggle('is-selected', el.classList.contains(`node-${nodeNames[index]}`)));
+    document.querySelectorAll('.system-node').forEach(el => el.classList.toggle('is-selected', opening && el.classList.contains(`node-${nodeNames[index]}`)));
     const label = document.querySelector('.system-detail');
-    label.dataset.i18n = `cap${index}Title`; label.textContent = translate(label.dataset.i18n);
-    document.querySelector('.system-index').textContent = `0${index + 1}—05`;
+    label.dataset.i18n = opening ? `cap${index}Title` : 'connectedSystem'; label.textContent = translate(label.dataset.i18n);
+    document.querySelector('.system-index').textContent = opening ? `0${index + 1}—05` : '— / 05';
   });
 });
 const architecture = document.querySelector('.architecture');
@@ -121,23 +125,9 @@ const architectureStage = document.querySelector('.architecture-stage');
 const layerButtons = [...document.querySelectorAll('[data-layer]')];
 const threeToggle = document.querySelector('.three-toggle');
 const threeStatus = document.querySelector('#three-status');
-let connections = null;
-let requestJob = null, manualSpread = false;
-const layerToggle = document.querySelector('.layer-toggle');
-function setSpread(value) {
-  architectureStage.style.setProperty('--spread', value);
-  const expanded = value > .5;
-  layerToggle.setAttribute('aria-pressed', String(expanded));
-  setText(layerToggle.querySelector('[data-i18n]'), expanded ? 'combineLayers' : 'separateLayers');
-  connections?.refresh();
-  updateRequestPaths();
-}
+let connections = null, poseTimer = 0, targetPose = [0,0];
+let requestJob = null;
 function setText(element, key) { element.dataset.i18n = key; element.textContent = translate(key); }
-layerToggle.addEventListener('click', () => {
-  manualSpread = true;
-  setSpread(layerToggle.getAttribute('aria-pressed') === 'true' ? 0 : 1);
-  connections?.pulse();
-});
 function showSimpleView(failed = false) {
   connections?.dispose(); connections = null;
   architecture.classList.remove('three-active');
@@ -189,10 +179,13 @@ architectureStage.addEventListener('pointermove', event => {
   const bounds = architectureStage.getBoundingClientRect();
   architectureStage.style.setProperty('--pointer-x', `${((event.clientX - bounds.left) / bounds.width - .5) * 4}deg`);
   architectureStage.style.setProperty('--pointer-y', `${((event.clientY - bounds.top) / bounds.height - .5) * -4}deg`);
+  targetPose = [(event.clientX - bounds.left) / bounds.width * 4 - 2,(event.clientY - bounds.top) / bounds.height * -4 + 2];
+  if (connections && !poseTimer) poseTimer = setTimeout(() => { poseTimer = 0; if(!paused) connections?.orient(...targetPose); },34);
 });
 architectureStage.addEventListener('pointerleave', () => {
   architectureStage.style.setProperty('--pointer-x', '0deg');
   architectureStage.style.setProperty('--pointer-y', '0deg');
+  clearTimeout(poseTimer);poseTimer=0;connections?.orient(0,0);
 });
 let architectureVisible = true;
 function syncRequestMotion() {
@@ -218,15 +211,13 @@ let scrollFrame = 0;
 function updateScroll() {
   scrollFrame = 0; const max = document.documentElement.scrollHeight - innerHeight;
   document.querySelector('.scroll-progress').style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
-  if (!paused && !manualSpread && architectureVisible) {
-    const top = architectureStage.getBoundingClientRect().top;
-    setSpread(Math.max(0, Math.min(1, (innerHeight * .55 - top) / (innerHeight * .4))));
-  }
-  updateRequestPaths();
 }
 addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScroll); }, { passive: true });
-addEventListener('resize', updateScroll);
+addEventListener('resize', () => { updateScroll(); updateRequestPaths(); connections?.refresh(); });
 const revealObserver = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); } }); }, { threshold: .08 });
+document.querySelectorAll('.section-heading,.capability,.engineering-decisions article,.lab-window').forEach((element,index) => {
+  element.classList.add('reveal');element.style.setProperty('--reveal-delay',`${index % 3 * 65}ms`);
+});
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 document.querySelectorAll('.magnetic').forEach(el => {
   el.addEventListener('pointermove', event => { if (paused || event.pointerType !== 'mouse') return; const rect = el.getBoundingClientRect(); el.style.transform = `translate(${(event.clientX - rect.left - rect.width / 2) * .07}px, ${(event.clientY - rect.top - rect.height / 2) * .12}px)`; });
@@ -237,6 +228,10 @@ const requestButtons = [document.querySelector('#hero-request'), document.queryS
 const heroStatus = document.querySelector('.hero-request-status');
 const responseSummary = document.querySelector('#response-summary');
 const traceList = document.querySelector('#request-trace');
+function renderHeroResult() {
+  const plan=lastResult;
+  document.querySelector('.hero-result').textContent=plan.status===200 ? `200 OK · ${plan.body.count} ${language==='de'?'Treffer':plan.body.count===1?'match':'matches'}` : `${plan.status} ${plan.label}`;
+}
 function requestPath(from, to) {
   const a = layerButtons[from], b = layerButtons[to], route = Math.min(from, to);
   const x1 = a.offsetLeft + a.offsetWidth * (from === 1 ? .02 : .94);
@@ -247,11 +242,22 @@ function requestPath(from, to) {
   return `M${x1} ${y1} C${rail} ${y1},${rail} ${y2},${x2} ${y2}`;
 }
 function updateRequestPaths() {
+  let cursor = 18;
+  const gap = 20;
+  layerButtons.forEach(layer => {
+    const angle = Math.abs(parseFloat(getComputedStyle(layer).getPropertyValue('--layer-angle'))) * Math.PI / 180;
+    const extent = layer.offsetHeight * Math.cos(angle) + layer.offsetWidth * Math.sin(angle);
+    layer.style.top = `${Math.round(cursor + (extent - layer.offsetHeight) / 2)}px`;
+    cursor += extent + gap;
+  });
+  const stageHeight = `${Math.ceil(cursor - gap + 18)}px`;
+  if (architectureStage.style.height !== stageHeight) architectureStage.style.height = stageHeight;
   const svg = document.querySelector('.request-paths');
   svg.setAttribute('viewBox', `0 0 ${architectureStage.clientWidth} ${architectureStage.clientHeight}`);
   svg.querySelectorAll('.request-track').forEach((path, index) => path.setAttribute('d', requestPath(index, index + 1)));
 }
-new ResizeObserver(updateRequestPaths).observe(architectureStage);
+const pathResize = new ResizeObserver(() => { updateRequestPaths(); connections?.refresh(); });
+pathResize.observe(architectureStage); layerButtons.forEach(layer => pathResize.observe(layer));
 function showTrace(plan, index) {
   traceList.replaceChildren(...plan.trace.slice(0, index + 1).map((step, i) => {
     const item = document.createElement('li'); setText(item, step.key);
@@ -266,6 +272,8 @@ function finishRequest() {
   showTrace(plan, plan.trace.length - 1);
   document.querySelector('#response-body').textContent = JSON.stringify(plan.body, null, 2);
   const code = document.querySelector('#response-code'); code.textContent = `${plan.status} ${plan.label}`; code.dataset.status = plan.status;
+  document.querySelector('.lab-window').dataset.result = String(plan.status);
+  lastResult=plan;renderHeroResult();
   const key = plan.status === 200 ? 'responseSuccess' : plan.status === 400 ? 'responseInvalid' : 'responseUnavailable';
   setText(responseSummary, key); setText(heroStatus, key);
   requestButtons.forEach(button => { button.disabled = false; });
@@ -299,10 +307,12 @@ function runRequest(query, offline, origin) {
   requestButtons.forEach(button => { button.disabled = true; });
   document.querySelector('#request-form').setAttribute('aria-busy', 'true');
   document.querySelector('#response-code').textContent = '…';
+  delete document.querySelector('#response-code').dataset.status;
   document.querySelector('#response-body').textContent = '{ }';
   setText(responseSummary, 'requestRunning');
+  delete document.querySelector('.lab-window').dataset.result;
+  document.querySelector('.hero-result').textContent = '…';
   if (origin === 'hero') {
-    manualSpread = true; setSpread(1);
     architecture.classList.add('request-running');
     document.querySelector('.request-paths').setCurrentTime(0);
   }
@@ -342,6 +352,21 @@ const ambientObserver = new IntersectionObserver(entries => {
 });
 document.querySelectorAll('.hero-copy,.stack-ribbon,.system-visual').forEach(element => ambientObserver.observe(element));
 document.addEventListener('visibilitychange', syncAmbientMotion);
-document.querySelector('[data-capability="0"]').setAttribute('aria-disabled', 'true');
+
+const sectionObserver = new IntersectionObserver(entries => {
+  const current = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
+  if (!current) return;
+  document.querySelectorAll('.site-header nav a').forEach(link => {
+    if(link.hash === `#${current.target.id}`) link.setAttribute('aria-current','location'); else link.removeAttribute('aria-current');
+  });
+}, {rootMargin:'-15% 0px -45% 0px',threshold:[0,.1,.4]});
+document.querySelectorAll('main>section[id]').forEach(section => sectionObserver.observe(section));
+document.querySelectorAll('.portrait-panel,.system-visual,.lab-window').forEach(panel => {
+  panel.addEventListener('pointermove',event => {
+    if(paused || event.pointerType !== 'mouse') return;
+    const bounds=panel.getBoundingClientRect();
+    panel.style.setProperty('--light-x',`${event.clientX-bounds.left}px`);panel.style.setProperty('--light-y',`${event.clientY-bounds.top}px`);
+  });
+});
 setLanguage(language); syncMotion(); updateScroll();
 document.documentElement.classList.add('js');

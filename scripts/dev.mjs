@@ -15,7 +15,7 @@ http.createServer(async(req,res)=>{
 let timer, needsBundle = false;
 watch(root,{recursive:true},(_,name)=>{
  if(!name||/^(\.git|dist|node_modules|\.openai)/.test(name)||name.endsWith('architecture-3d.bundle.js')||name.endsWith('three-LICENSE.txt'))return;
- needsBundle ||= name.replaceAll('\\','/') === 'script/application-scene.js';
+ needsBundle ||= name.replaceAll('\\','/') === 'script/layer-scene.js';
  clearTimeout(timer);timer=setTimeout(async()=>{
   try { if(needsBundle) { needsBundle=false; await prepareAssets(); } clients.forEach(c=>c.write('data: reload\n\n')); }
   catch(error) { process.stderr.write(`Asset build failed: ${error.message}\n`); }
