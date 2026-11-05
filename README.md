@@ -1,6 +1,6 @@
 # Jan Reist — reist.dev
 
-An English/German portfolio built with HTML, CSS and JavaScript. The interactive architecture hero, expertise diagram, scroll entrances and hover interactions share a persistent motion preference and respect reduced motion by default. The hero connects Blazor, .NET services and SQL/Azure through an animated request path.
+An English/German portfolio built with HTML, CSS and JavaScript. The portrait-led introduction is followed by expertise, an interactive request study, experience and learning. The request study connects Blazor, .NET services and SQL/Azure through an optional 3D view and animated request path. Motion preferences persist and reduced motion is respected by default.
 
 ## Development
 
@@ -34,7 +34,7 @@ Historical files from the original portfolio remain in the checkout for referenc
 
 The regular page does not download Three.js or allocate a WebGL context. Visitors can enable the 3D connections when they want them; all content and layer controls remain ordinary HTML. A failed load, unavailable WebGL2 context, context loss or sustained slow rendering restores the simple view.
 
-The renderer uses one transparent canvas, no external textures or models, no shadows or postprocessing, and short 1.2-second animations after enabling 3D or selecting a layer. Request transitions match the trace's 620 ms steps, including the return path. It schedules no frames while idle, hidden or offscreen. Drawing-buffer area is limited to 450,000 pixels and device pixel ratio to 1.25; coarse-pointer or reported low-memory devices use 240,000 pixels, DPR 1 and a 24-fps ceiling. Other devices use a 30-fps ceiling. Disabling 3D releases the graphics resources. The scene renders 740 triangles in seven draw calls. These are complexity limits, not a guarantee of performance on every device.
+The renderer uses one transparent canvas, no external textures or models, no shadows or postprocessing, and a shared projection for the rounded board surfaces and their HTML labels. Connectors use the transformed board ports. Selecting a layer renders one frame; only requests animate a packet. Request transitions match the trace's 620 ms steps, including the return path. It schedules no frames while idle, hidden or offscreen. Drawing-buffer area is limited to 450,000 pixels and device pixel ratio to 1.25; coarse-pointer or reported low-memory devices use 240,000 pixels, DPR 1 and a 24-fps ceiling. Other devices use a 30-fps ceiling. Disabling 3D releases the graphics resources. The resting scene renders 612 triangles in eight draw calls. The request packet adds one draw call and 80 triangles. Card spacing adapts to actual content height in both languages. These are complexity limits, not a guarantee of performance on every device.
 
 Three.js is MIT-licensed. Its notice is included in the local bundle and `assets/three-LICENSE.txt` in the build. Production is self-contained and does not use a script CDN.
 
@@ -42,4 +42,4 @@ Three.js is MIT-licensed. Its notice is included in the local bundle and `assets
 
 `script/request-demo.js` is the shared, deterministic request logic for both the hero and the request lab. It filters an in-memory list of Jan's public skills, validates a 1–40 character query, and supports a simulated unavailable data source. The UI presents success (200), validation failure (400), and dependency failure (503), with a trace and the actual response object. No API request or private company data is involved. The page labels this as a browser simulation; the .NET architecture visual represents Jan's skills, not the technology running this JavaScript demo.
 
-Animation is a presentation layer over the completed result. Pausing motion, leaving the demo or hiding the tab completes the trace immediately. Source inspection loads the same module used by the page. Both English and German controls are supported. Automatic layer separation stops with the motion preference; manual layer selection and separation remain usable.
+Animation is a presentation layer over the completed result. Pausing motion, leaving the demo or hiding the tab completes the trace immediately. Source inspection loads the same module used by the page. Both English and German controls are supported. Layer selection remains usable with motion paused. Card spacing is consistent and adapts to actual content height.
