@@ -26,7 +26,7 @@ const translations = {
     principle1: 'Die Ursache finden.', principle2: 'Das Ziel im Blick behalten.', principle3: 'Auf die Details achten.',
     languages: 'SPRACHEN', german: 'Deutsch', english: 'Englisch', learning: 'Weiterbildung', stayCurious: 'NEUGIERIG BLEIBEN',
     learningLine1: "Kurse &", learningLine2: "Zertifikate.", learningIntro: "Was ich neben der täglichen Arbeit dazulerne.", aiLearning: 'KI-Agenten & Tools',
-    fiveCourses: '5 KURSE', certified: 'ZERTIFIKAT', june2026: 'Juni 2026', april2026: 'April 2026',
+    sixCourses: '6 KURSE', november2026: 'November 2026', certified: 'ZERTIFIKAT', june2026: 'Juni 2026', april2026: 'April 2026',
     fceDate: 'Ausgestellt im Februar 2025.', azureDate: 'Microsoft Certified: Azure AI Fundamentals. Ausgestellt im August 2024.',
     viewCredentials: 'Nachweise auf LinkedIn ansehen',
     contact: 'Kontakt', connectKicker: 'LASS UNS REDEN', contactLine1: "Eine Idee", contactLine2: "im Kopf?",
